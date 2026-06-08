@@ -408,7 +408,7 @@ export default function ShowroomTour() {
                   <div className="space-y-1">
                     <span className="text-[9px] text-zinc-500 block uppercase font-sans tracking-wide">Contacts</span>
                     <a href="tel:+919680077124" className="text-zinc-300 hover:text-[#D4AF37] transition-colors block">N. Soni: 9680077124</a>
-                    <a href="tel:+919414440405" className="text-zinc-300 hover:text-[#D4AF37] transition-colors block">K. Soni: 9414440405</a>
+                    <a href="tel:+919414444025" className="text-zinc-300 hover:text-[#D4AF37] transition-colors block">K. Soni: 9414444025</a>
                   </div>
                   <div className="space-y-1">
                     <span className="text-[9px] text-zinc-500 block uppercase font-sans tracking-wide">Operating Hours</span>

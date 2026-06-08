@@ -10,7 +10,7 @@ export const STORE_INFO = {
   tagline: "Timeless Elegance, Crafted for You",
   foundedYear: 1957,
   location: "Shop No. 2, Shopping Complex, Rawatbhata, Rajasthan - 323307",
-  phone: "+91 96800 77124, +91 94144 40405",
+  phone: "+91 96800 77124, +91 9414444025",
   whatsapp: "+919680077124",
   email: "info@prashantjewellers.com",
   timings: "Monday - Saturday: 11:00 AM to 9:00 PM (Sunday: Closed)",
