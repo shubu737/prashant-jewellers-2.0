@@ -32,7 +32,7 @@ export default function Particles() {
     let height = (canvas.height = window.innerHeight);
 
     const particles: Particle[] = [];
-    const maxParticles = 65; // High performance ceiling
+    const maxParticles = 30;
 
     // Create a particle
     const createParticle = (isInitial = false): Particle => {
@@ -62,8 +62,9 @@ export default function Particles() {
 
     window.addEventListener('resize', handleResize);
 
-    // Loop
+    // Loop capped at ~30fps to reduce CPU usage
     const draw = () => {
+      setTimeout(() => { animationFrameId = requestAnimationFrame(draw); }, 33);
       ctx.clearRect(0, 0, width, height);
 
       // Gold-like color gradient
@@ -86,18 +87,8 @@ export default function Particles() {
 
         ctx.beginPath();
         // Create subtle glow radiating around gold flake
-        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 3);
-        grad.addColorStop(0, `rgba(212, 175, 55, ${drawAlpha})`);   // Metallic Gold #D4AF37
-        grad.addColorStop(0.3, `rgba(243, 201, 105, ${drawAlpha * 0.5})`); // Pale gold
-        grad.addColorStop(1, 'rgba(212, 175, 55, 0)');
-
-        ctx.fillStyle = grad;
-        ctx.arc(p.x, p.y, p.size * 3, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Draw the core flake
         ctx.beginPath();
-        ctx.fillStyle = `rgba(255, 235, 175, ${drawAlpha})`;
+        ctx.fillStyle = `rgba(212, 175, 55, ${drawAlpha})`;
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
 
@@ -110,7 +101,6 @@ export default function Particles() {
         if (p.x > width + 10) p.x = -10;
       }
 
-      animationFrameId = requestAnimationFrame(draw);
     };
 
     draw();

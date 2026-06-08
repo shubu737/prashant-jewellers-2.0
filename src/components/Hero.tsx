@@ -48,15 +48,6 @@ export default function Hero({ onExplore }: HeroProps) {
     >
       {/* Absolute background video & image with deep luxury radial gradients */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover opacity-[0.25] scale-105"
-        >
-          <source src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c05c091d3ffab7eef1108c4ff7572796&profile_id=165&oauth2_token_id=57447761" type="video/mp4" />
-        </video>
         <img
           src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1920&q=85"
           alt="Premium Imperial Gold Jewellery"
