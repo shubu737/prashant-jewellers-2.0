@@ -119,7 +119,7 @@ export default function App() {
                   PRASHANT
                 </h1>
                 <p className="text-[10px] tracking-[0.4em] text-amber-500 uppercase font-semibold">
-                  JEWELLERS • KOTA
+                  JEWELLERS • RAWATBHATA
                 </p>
               </div>
 

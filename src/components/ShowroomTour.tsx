@@ -71,7 +71,7 @@ export default function ShowroomTour() {
   const [duration, setDuration] = useState(0);
   const [videoSrc, setVideoSrc] = useState<string | null>(null);
   const [dragActive, setDragActive] = useState(false);
-  const [activeTab, setActiveTab] = useState<'rawatbhata' | 'kota'>('rawatbhata');
+  const [activeTab, setActiveTab] = useState<'rawatbhata' | 'rawatbhata2'>('rawatbhata');
   
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
