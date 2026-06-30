@@ -144,19 +144,19 @@ export default function Hero({ onExplore }: HeroProps) {
       {/* Decorative Bottom Row with Stats & Scroll Prompt combined in responsive vertical stacking */}
       <div className="relative z-20 w-full mt-auto pt-6 pb-2 space-y-6 shrink-0">
         {/* Exquisite bottom stats banner content */}
-        <div className="hidden items-center justify-center space-x-12 px-4 md:flex">
+        <div className="flex items-center justify-center gap-6 px-4 flex-wrap md:gap-12">
           <div className="flex flex-col items-center">
-            <span className="font-serif text-2xl font-light text-amber-300">100%</span>
+            <span className="font-serif text-xl md:text-2xl font-light text-amber-300">100%</span>
             <span className="text-[9px] tracking-widest uppercase text-zinc-500">BIS Hallmarked Gold</span>
           </div>
-          <div className="h-8 w-[1px] bg-amber-500/25" />
+          <div className="hidden md:block h-8 w-[1px] bg-amber-500/25" />
           <div className="flex flex-col items-center">
-            <span className="font-serif text-2xl font-light text-amber-300">Since 1957</span>
+            <span className="font-serif text-xl md:text-2xl font-light text-amber-300">Since 1957</span>
             <span className="text-[9px] tracking-widest uppercase text-zinc-500">Royal Legacy</span>
           </div>
-          <div className="h-8 w-[1px] bg-amber-500/25" />
+          <div className="hidden md:block h-8 w-[1px] bg-amber-500/25" />
           <div className="flex flex-col items-center">
-            <span className="font-serif text-2xl font-light text-amber-300">Bespoke</span>
+            <span className="font-serif text-xl md:text-2xl font-light text-amber-300">Bespoke</span>
             <span className="text-[9px] tracking-widest uppercase text-zinc-500">Custom Rajasthan Crafts</span>
           </div>
         </div>

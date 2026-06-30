@@ -65,18 +65,18 @@ export default function Gallery() {
         </div>
 
         {/* Masonry-Style Grid representation */}
-        <div className="columns-1 gap-6 sm:columns-2 lg:columns-3 space-y-6">
+        <div className="columns-1 gap-6 sm:columns-2 lg:columns-3">
           {GALLERY_ITEMS.map((item) => (
             <div
               key={item.id}
-              className="break-inside-avoid relative group overflow-hidden border border-zinc-900 bg-neutral-950 p-2.5 transition-all duration-500 hover:border-[#D4AF37]/30 shadow-lg"
+              className="break-inside-avoid mb-6 relative group overflow-hidden border border-zinc-900 bg-neutral-950 p-2.5 transition-all duration-500 hover:border-[#D4AF37]/30 shadow-lg"
             >
               <div className="relative overflow-hidden rounded-sm bg-zinc-900">
                 <img
                   src={item.image}
                   alt={item.title}
                   loading="lazy"
-                  className="w-full object-cover h-auto scale-101 transition-transform duration-700 group-hover:scale-[1.07]"
+                  className="w-full object-cover h-auto transition-transform duration-700 group-hover:scale-[1.07]"
                   referrerPolicy="no-referrer"
                 />
 

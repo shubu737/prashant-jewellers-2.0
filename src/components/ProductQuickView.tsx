@@ -3,8 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Sparkles, MessageSquare, ShieldAlert, BadgeCheck } from 'lucide-react';
+import { X, Sparkles, MessageSquare, BadgeCheck } from 'lucide-react';
 import { Product } from '../types';
 import { STORE_INFO } from '../data';
 import { useSound } from '../hooks/useSound';
@@ -16,6 +17,14 @@ interface ProductQuickViewProps {
 
 export default function ProductQuickView({ product, onClose }: ProductQuickViewProps) {
   const { playLuxuryChime, playGlowChime } = useSound();
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    if (product) window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [product, onClose]);
 
   if (!product) return null;
 

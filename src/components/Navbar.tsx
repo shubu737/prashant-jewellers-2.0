@@ -159,7 +159,9 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="fixed top-[66px] left-0 right-0 z-40 overflow-hidden border-b border-amber-500/20 bg-neutral-950/95 backdrop-blur-2xl shadow-xl lg:hidden"
+            className={`fixed left-0 right-0 z-40 overflow-hidden border-b border-amber-500/20 bg-neutral-950/95 backdrop-blur-2xl shadow-xl lg:hidden transition-all duration-500 ${
+              isScrolled ? 'top-[57px]' : 'top-[73px]'
+            }`}
           >
             <div className="px-4 pt-4 pb-6 space-y-4">
               <div className="flex flex-col space-y-3">

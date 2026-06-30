@@ -109,7 +109,7 @@ export default function Collections({ onQuickView }: CollectionsProps) {
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="h-full w-full object-cover object-center transition-transform duration-700 ease-out scale-102 group-hover:scale-110"
+                    className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
                   

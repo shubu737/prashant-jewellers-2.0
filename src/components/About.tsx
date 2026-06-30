@@ -21,7 +21,7 @@ export default function About() {
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12">
           
           {/* Left Column: Intricate double image frame */}
-          <div className="relative lg:col-span-6">
+          <div className="relative lg:col-span-6 pb-10">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}

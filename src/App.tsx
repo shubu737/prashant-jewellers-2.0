@@ -23,6 +23,7 @@ import ShowroomTour from './components/ShowroomTour';
 import VisitUs from './components/VisitUs';
 import Footer from './components/Footer';
 import ProductDetailModal from './components/ProductDetailModal';
+import ProductQuickView from './components/ProductQuickView';
 
 import { Product } from './types';
 import { STORE_INFO } from './data';
@@ -32,6 +33,7 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const { playLuxuryChime } = useSound();
 
@@ -160,7 +162,7 @@ export default function App() {
         <Founder />
 
         {/* Section 3: Collections (Filtering + Showcase Grid) */}
-        <Collections onQuickView={setSelectedProduct} />
+        <Collections onQuickView={setQuickViewProduct} />
 
         {/* Section 4: Featured (Showcase details slider) */}
         <Featured onSelectProduct={setSelectedProduct} />
@@ -187,6 +189,12 @@ export default function App() {
 
       {/* Section 10: Footer */}
       <Footer onNavigate={handleNavigate} />
+
+      {/* Quick View modal for Collections */}
+      <ProductQuickView
+        product={quickViewProduct}
+        onClose={() => setQuickViewProduct(null)}
+      />
 
       {/* Detail specification modal */}
       <ProductDetailModal

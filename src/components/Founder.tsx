@@ -47,6 +47,9 @@ export default function Founder() {
               <img
                 src="/founder.jpg"
                 alt="Mr. Krish Soni — Founder, Prashant Jewellers"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80';
+                }}
                 className="w-72 sm:w-80 lg:w-96 aspect-[3/4] object-cover object-top rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
               />
 
