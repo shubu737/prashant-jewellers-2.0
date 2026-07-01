@@ -4,7 +4,6 @@
  */
 
 import { motion } from 'motion/react';
-import { useState } from 'react';
 
 interface LogoProps {
   className?: string;
@@ -21,8 +20,6 @@ export default function Logo({
   height,
   animate = true
 }: LogoProps) {
-  const [useFallback, setUseFallback] = useState(false);
-
   // Map size presets to dimensions
   const dimensions = {
     sm: { w: 32, h: 36 },
@@ -33,25 +30,8 @@ export default function Logo({
   };
 
   const { w, h } = dimensions[size];
-  // Add a cache-busting query param to force browsers to fetch the newest logo
-  const logoSrc = '/logo.png?v=2';
 
-  if (!useFallback) {
-    return (
-      <motion.img
-        src={logoSrc}
-        alt="Prashant Jewellers Logo"
-        width={w}
-        height={h}
-        className={`inline-block object-contain ${className}`}
-        initial={animate ? { opacity: 0, scale: 0.95 } : undefined}
-        animate={animate ? { opacity: 1, scale: 1 } : undefined}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        onError={() => setUseFallback(true)}
-      />
-    );
-  }
-
+  // Always render the inline SVG as the primary brand logo (no external file needed)
   return (
     <motion.svg
       width={w}
