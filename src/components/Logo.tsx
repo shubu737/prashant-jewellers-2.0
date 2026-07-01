@@ -33,7 +33,8 @@ export default function Logo({
   };
 
   const { w, h } = dimensions[size];
-  const logoSrc = '/logo.png';
+  // Add a cache-busting query param to force browsers to fetch the newest logo
+  const logoSrc = '/logo.png?v=2';
 
   if (!useFallback) {
     return (
