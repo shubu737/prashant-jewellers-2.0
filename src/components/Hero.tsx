@@ -110,7 +110,7 @@ export default function Hero({ onExplore }: HeroProps) {
             variants={itemVariants}
             className="mx-auto max-w-2xl font-serif text-sm leading-relaxed text-zinc-300 md:text-lg italic px-4"
           >
-            Indulge in Rawatbhata's legendary hallmark purity and artisan lineage. Discover hand-sculpted bridal sets, flawless diamond rings, and pure gold ornaments crafted to transcend generations.
+            Rawatbhata’s legacy of purity meets timeless craftsmanship. Discover hand-sculpted bridal sets, radiant diamond rings, and pure gold jewellery—crafted to be cherished for generations.
           </motion.p>
 
           {/* Action CTAs */}
