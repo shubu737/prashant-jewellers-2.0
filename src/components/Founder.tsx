@@ -46,7 +46,7 @@ export default function Founder() {
 
               <img
                 src="/founder.jpg"
-                alt="Mr. Krish Soni — Founder, Prashant Jewellers"
+                alt="Mr. Nilesh Kumar Soni — Founder, Prashant Jewellers"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80';
                 }}
@@ -55,7 +55,7 @@ export default function Founder() {
 
               {/* Founder badge overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6">
-                <p className="font-serif text-lg font-semibold text-white">Mr. Krish Soni</p>
+                <p className="font-serif text-lg font-semibold text-white">Mr. Nilesh Kumar Soni</p>
                 <p className="font-mono text-[10px] uppercase tracking-widest text-[#D4AF37] mt-0.5">Founder, Prashant Jewellers</p>
               </div>
 
@@ -117,7 +117,7 @@ export default function Founder() {
 
             {/* Signature line */}
             <div className="pt-4 border-t border-zinc-900">
-              <p className="font-serif text-2xl italic text-[#D4AF37]/70">Krish Soni</p>
+              <p className="font-serif text-2xl italic text-[#D4AF37]/70">Nilesh Kumar Soni</p>
               <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-600 mt-1">Founder & Master Jeweller</p>
             </div>
           </motion.div>
