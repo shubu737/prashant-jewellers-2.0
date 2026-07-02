@@ -101,10 +101,10 @@ export default function App() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: 'easeInOut' }}
             id="luxury-loader"
-            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#F2F0EF]/95"
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#211715]"
           >
             {/* Elegant luxury background shimmer elements */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-neutral-950 via-zinc-950 to-[#0c0a05] opacity-90" />
+            <div className="absolute inset-0 bg-[#211715]" />
             
             <div className="relative flex flex-col items-center text-center space-y-6 max-w-sm px-6">
               {/* High-fidelity Brand Monogram Logo with deep pulse aesthetic */}
