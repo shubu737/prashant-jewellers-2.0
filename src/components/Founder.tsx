@@ -23,7 +23,7 @@ const founders = [
   },
   {
     name: 'Mr. Nilesh Kumar Soni',
-    title: 'Founder & Master Jeweller',
+    title: 'Co-Founder & Master Jeweller',
     image: '/founder.jpg',
     fallback: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
     since: '1957',
