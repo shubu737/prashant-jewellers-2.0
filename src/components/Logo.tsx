@@ -34,7 +34,7 @@ export default function Logo({
   // Render the client's uploaded raster logo from `public/logo-v2.png` as primary.
   return (
     <motion.img
-      src="/logo-v2.png"
+      src="/logo.svg"
       alt="Prashant Jewellers Logo"
       style={{ width: 'auto', height: `${h}px`, minWidth: `${Math.floor(h * 0.4)}px` }}
       className={`inline-block object-contain ${className}`}
