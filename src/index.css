@@ -93,6 +93,12 @@
   background: rgba(212, 175, 55, 0.45);
 }
 
+/* Global base styles */
+body {
+  background-color: #FAF8F5;
+  color: #1A1A1A;
+}
+
 /* Soft gold ambient lighting classes */
 .bg-radial-gradient {
   background: radial-gradient(circle, var(--tw-gradient-stops));
