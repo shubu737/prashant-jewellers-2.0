@@ -10,7 +10,7 @@ export default function Founder() {
   return (
     <section
       id="founder"
-      className="relative overflow-hidden bg-neutral-950 py-24 px-4 sm:px-6 lg:px-8 border-b border-zinc-900"
+      className="relative overflow-hidden bg-[#F2F0EF] py-24 px-4 sm:px-6 lg:px-8 border-b border-[#D4AF37]/10"
     >
       {/* Gold ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-amber-500/5 blur-[120px] pointer-events-none" />
@@ -24,7 +24,7 @@ export default function Founder() {
             <span className="font-mono text-[10px] tracking-[0.4em] uppercase font-semibold">The Visionary Behind</span>
             <span className="h-px w-6 bg-[#D4AF37]" />
           </div>
-          <h2 className="font-serif text-3xl font-light tracking-wide text-white sm:text-5xl">
+          <h2 className="font-serif text-3xl font-light tracking-wide text-[#050505] sm:text-5xl">
             Meet Our <span className="font-serif font-bold italic text-[#D4AF37]">Founder</span>
           </h2>
         </div>
@@ -61,9 +61,9 @@ export default function Founder() {
                 </div>
 
                 {/* Since badge */}
-                <div className="absolute top-4 right-4 bg-black/80 border border-[#D4AF37]/30 px-3 py-2 text-center backdrop-blur-sm">
+                <div className="absolute top-4 right-4 bg-white/90 border border-[#D4AF37]/30 px-3 py-2 text-center backdrop-blur-sm">
                   <p className="font-serif text-lg font-bold text-[#D4AF37] leading-none">1957</p>
-                  <p className="font-mono text-[8px] uppercase tracking-widest text-zinc-400 mt-0.5">Est.</p>
+                  <p className="font-mono text-[8px] uppercase tracking-widest text-[#5c5c5c] mt-0.5">Est.</p>
                 </div>
               </div>
             </motion.div>
@@ -73,9 +73,9 @@ export default function Founder() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-              className="rounded-sm border border-[#D4AF37]/20 bg-neutral-900/70 p-5 sm:p-6"
+              className="rounded-sm border border-[#D4AF37]/20 bg-white p-5 sm:p-6"
             >
-              <p className="font-serif text-base sm:text-lg leading-relaxed text-zinc-200">
+              <p className="font-serif text-base sm:text-lg leading-relaxed text-[#333333]">
                 At just 15 years old, Neelesh Soni stepped into the family jewellery business with a dream to create something extraordinary. Through years of perseverance, honesty, and exceptional craftsmanship, he elevated the business to new heights. Today, his legacy is built on trust, unmatched quality, and timeless designs that celebrate life’s most precious moments.
               </p>
             </motion.div>
@@ -92,12 +92,10 @@ export default function Founder() {
             {/* Quote */}
             <div className="relative pl-6 border-l-2 border-[#D4AF37]/40">
               <Quote className="absolute -top-1 -left-3 h-5 w-5 text-[#D4AF37]/40 fill-[#D4AF37]/20" />
-              <p className="font-serif text-lg sm:text-xl font-light italic text-zinc-200 leading-relaxed">
-                Founded by a visionary craftsman, Prashant Jewellers stands as a symbol of trust, elegance, and timeless artistry.
-              </p>
+                <p className="font-serif text-lg sm:text-xl font-light italic text-[#5c5c5c] leading-relaxed">
             </div>
 
-            <p className="font-sans text-sm text-zinc-400 leading-relaxed">
+            <p className="font-sans text-sm text-[#333333] leading-relaxed">
               With a passion for perfection and an eye for detail, the founder has dedicated years to creating jewellery that reflects both tradition and modern luxury.
             </p>
 
@@ -108,9 +106,9 @@ export default function Founder() {
                 { value: '5.0★', label: 'Google Rating' },
                 { value: '100%', label: 'BIS Hallmarked' },
               ].map((stat) => (
-                <div key={stat.label} className="border border-zinc-800 bg-neutral-900/40 p-4 text-center rounded-sm">
+                <div key={stat.label} className="border border-[#D4AF37]/15 bg-white p-4 text-center rounded-sm shadow-sm">
                   <p className="font-serif text-xl font-semibold text-[#D4AF37]">{stat.value}</p>
-                  <p className="font-sans text-[10px] uppercase tracking-wider text-zinc-500 mt-1">{stat.label}</p>
+                  <p className="font-sans text-[10px] uppercase tracking-wider text-[#5c5c5c] mt-1">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -124,7 +122,7 @@ export default function Founder() {
               ].map((item) => (
                 <div key={item} className="flex items-start space-x-3">
                   <Award className="h-4 w-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
-                  <span className="font-sans text-xs text-zinc-400 leading-relaxed">{item}</span>
+                  <span className="font-sans text-xs text-[#5c5c5c] leading-relaxed">{item}</span>
                 </div>
               ))}
             </div>

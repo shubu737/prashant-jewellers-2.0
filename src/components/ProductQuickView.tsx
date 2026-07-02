@@ -36,7 +36,7 @@ export default function ProductQuickView({ product, onClose }: ProductQuickViewP
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-md">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#F2F0EF]/90 p-4 backdrop-blur-md">
         
         {/* Backdrop clicks */}
         <div className="absolute inset-0" onClick={onClose} />
@@ -46,7 +46,7 @@ export default function ProductQuickView({ product, onClose }: ProductQuickViewP
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 10 }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="relative max-w-3xl w-full border border-[#D4AF37]/20 bg-neutral-950 p-6 md:p-10 shadow-2xl z-10 overflow-hidden"
+          className="relative max-w-3xl w-full border border-[#D4AF37]/20 bg-[#F7F4F1] p-6 md:p-10 shadow-2xl z-10 overflow-hidden"
         >
           {/* Subtle gold spotlight ornament layout */}
           <div className="absolute top-0 right-0 h-24 w-24 bg-[#D4AF37]/5 blur-2xl pointer-events-none" />
@@ -54,7 +54,7 @@ export default function ProductQuickView({ product, onClose }: ProductQuickViewP
           {/* Close button with dynamic micro interaction */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors cursor-pointer"
+            className="absolute top-4 right-4 text-[#5c5c5c] hover:text-amber-400 transition-colors cursor-pointer"
             aria-label="Close details"
           >
             <X className="h-6 w-6" />
@@ -62,7 +62,7 @@ export default function ProductQuickView({ product, onClose }: ProductQuickViewP
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* Visual preview column */}
-            <div className="relative aspect-square overflow-hidden border border-zinc-900 bg-[#080808] flex items-center justify-center">
+            <div className="relative aspect-square overflow-hidden border border-[#D4AF37]/10 bg-[#F7F4F1] flex items-center justify-center">
               <img
                 src={product.image}
                 alt={product.name}
@@ -70,9 +70,9 @@ export default function ProductQuickView({ product, onClose }: ProductQuickViewP
                 referrerPolicy="no-referrer"
               />
               {/* Certification Badge overlay */}
-              <div className="absolute bottom-3 left-3 z-20 flex items-center space-x-1 border border-[#D4AF37]/45 bg-black/90 px-2 py-0.5 rounded-sm">
+              <div className="absolute bottom-3 left-3 z-20 flex items-center space-x-1 border border-[#D4AF37]/45 bg-white/90 px-2 py-0.5 rounded-sm">
                 <BadgeCheck className="h-3 w-3 text-[#D4AF37]" />
-                <span className="text-[8px] font-mono tracking-widest text-[#D4AF37] uppercase">BIS CERTIFIED 916</span>
+                <span className="text-[8px] font-mono tracking-widest text-[#050505] uppercase">BIS CERTIFIED 916</span>
               </div>
             </div>
 
@@ -83,24 +83,24 @@ export default function ProductQuickView({ product, onClose }: ProductQuickViewP
                   {product.category} collection
                 </span>
 
-                <h3 className="font-serif text-2xl font-light text-white leading-tight">
+                <h3 className="font-serif text-2xl font-light text-[#050505] leading-tight">
                   {product.name}
                 </h3>
 
-                <p className="font-serif italic text-zinc-400 text-xs leading-relaxed">
+                <p className="font-serif italic text-[#5c5c5c] text-xs leading-relaxed">
                   {product.description}
                 </p>
 
                 {/* Technical data grid */}
-                <div className="grid grid-cols-2 gap-4 border-t border-b border-zinc-900 py-4 mt-2">
+                <div className="grid grid-cols-2 gap-4 border-t border-b border-[#D4AF37]/10 py-4 mt-2">
                   <div className="space-y-0.5">
                     <span className="text-[9px] uppercase tracking-wider text-zinc-500 font-sans block">Metal Purity</span>
-                    <span className="font-serif text-xs font-semibold text-zinc-200">{product.purity}</span>
+                    <span className="font-serif text-xs font-semibold text-[#050505]">{product.purity}</span>
                   </div>
                   {product.weight && (
                     <div className="space-y-0.5">
                       <span className="text-[9px] uppercase tracking-wider text-zinc-500 font-sans block">Net Weight</span>
-                      <span className="font-serif text-xs font-semibold text-zinc-200">{product.weight}</span>
+                      <span className="font-serif text-xs font-semibold text-[#050505]">{product.weight}</span>
                     </div>
                   )}
                 </div>
@@ -111,10 +111,10 @@ export default function ProductQuickView({ product, onClose }: ProductQuickViewP
                   <div className="flex items-baseline space-x-3.5 mt-1">
                     <span className="font-sans text-xl font-bold tracking-wide text-[#D4AF37]">{product.price}</span>
                     {product.originalPrice && (
-                      <span className="font-sans text-xs text-zinc-500 line-through">{product.originalPrice}</span>
+                      <span className="font-sans text-xs text-[#6b7280] line-through">{product.originalPrice}</span>
                     )}
                   </div>
-                  <span className="text-[8px] font-mono text-zinc-500 mt-1 block">
+                  <span className="text-[8px] font-mono text-[#5c5c5c] mt-1 block">
                     * Final rate based on live Rawatbhata daily gold price quotes.
                   </span>
                 </div>
@@ -132,7 +132,7 @@ export default function ProductQuickView({ product, onClose }: ProductQuickViewP
                 </button>
                 <button
                   onClick={onClose}
-                  className="w-full border border-zinc-800 text-zinc-400 hover:text-white py-2.5 px-4 text-xs font-semibold uppercase tracking-widest transition-colors cursor-pointer"
+                  className="w-full border border-[#D4AF37]/10 text-[#050505] hover:text-[#050505] py-2.5 px-4 text-xs font-semibold uppercase tracking-widest transition-colors cursor-pointer"
                 >
                   Return to Exhibition Catalog
                 </button>

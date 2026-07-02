@@ -92,7 +92,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#050505] text-[#F5F5F5] font-sans antialiased overflow-x-hidden selection:bg-[#D4AF37]/30 selection:text-white border-4 md:border-8 border-[#D4AF37]/5">
+    <div className="offwhite-theme relative min-h-screen bg-[#F2F0EF] text-[#050505] font-sans antialiased overflow-x-hidden selection:bg-[#D4AF37]/30 selection:text-[#050505] border-4 md:border-8 border-[#D4AF37]/5">
       {/* Luxury loading animation (gold shimmer) */}
       <AnimatePresence>
         {isLoading && (
@@ -101,7 +101,7 @@ export default function App() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: 'easeInOut' }}
             id="luxury-loader"
-            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black"
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#F2F0EF]/95"
           >
             {/* Elegant luxury background shimmer elements */}
             <div className="absolute inset-0 bg-gradient-to-tr from-neutral-950 via-zinc-950 to-[#0c0a05] opacity-90" />
@@ -117,7 +117,7 @@ export default function App() {
               </motion.div>
 
               <div className="space-y-2">
-                <h1 className="font-serif text-3xl font-light tracking-[0.25em] text-white">
+                <h1 className="font-serif text-3xl font-light tracking-[0.25em] text-[#050505]">
                   PRASHANT
                 </h1>
                 <p className="text-[10px] tracking-[0.4em] text-amber-500 uppercase font-semibold">

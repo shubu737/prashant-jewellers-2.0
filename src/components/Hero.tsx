@@ -44,7 +44,7 @@ export default function Hero({ onExplore }: HeroProps) {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col justify-between overflow-hidden bg-neutral-950 px-4 py-8 sm:px-6 lg:px-8"
+      className="relative flex min-h-screen flex-col justify-between overflow-hidden bg-[#F2F0EF] px-4 py-8 sm:px-6 lg:px-8"
     >
       {/* Absolute background video & image with deep luxury radial gradients */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
@@ -55,8 +55,8 @@ export default function Hero({ onExplore }: HeroProps) {
           referrerPolicy="no-referrer"
         />
         {/* Soft gold wash overlay */}
-        <div className="absolute inset-0" style={{ background: 'radial-gradient(circle, transparent, rgba(10,10,10,0.8), #0a0a0a)' }} />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-neutral-950/40" />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(circle, transparent, rgba(242,240,239,0.95), #F2F0EF)' }} />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F2F0EF] via-[#F2F0EF]/85 to-[#F2F0EF]/70" />
       </div>
 
       {/* Gold spotlight overlay reflection */}
@@ -94,7 +94,7 @@ export default function Hero({ onExplore }: HeroProps) {
 
           {/* Substantial luxury heading */}
           <motion.div variants={itemVariants} className="space-y-3 sm:space-y-4">
-            <h1 className="font-serif text-4xl font-light tracking-[0.16em] text-white sm:text-6xl md:text-7.5xl leading-none">
+            <h1 className="font-serif text-4xl font-light tracking-[0.16em] text-[#050505] sm:text-6xl md:text-7.5xl leading-none">
               PRASHANT <br />
               <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-100 bg-clip-text font-serif font-semibold tracking-[0.18em] text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.15)]">
                 JEWELLERS
@@ -132,7 +132,7 @@ export default function Hero({ onExplore }: HeroProps) {
 
             <button
               onClick={() => handleCtaClick('visit-us')}
-              className="flex w-56 items-center justify-center space-x-2.5 rounded-sm border border-zinc-700 bg-neutral-950/80 px-8 py-4.5 font-sans text-xs font-medium uppercase tracking-widest text-zinc-200 transition-all duration-300 hover:border-amber-400 hover:text-white cursor-pointer shadow-[0_4px_25px_rgba(0,0,0,0.5)] hover:shadow-[0_0_15px_rgba(245,158,11,0.15)]"
+              className="flex w-56 items-center justify-center space-x-2.5 rounded-sm border border-[#D4AF37]/20 bg-white/90 px-8 py-4.5 font-sans text-xs font-medium uppercase tracking-widest text-[#050505] transition-all duration-300 hover:border-amber-400 hover:text-black cursor-pointer shadow-[0_4px_25px_rgba(0,0,0,0.1)] hover:shadow-[0_0_15px_rgba(245,158,11,0.12)]"
             >
               <MapPin className="h-4 w-4 text-amber-500" />
               <span>Visit Showroom</span>

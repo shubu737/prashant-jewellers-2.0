@@ -40,7 +40,7 @@ export default function Collections({ onQuickView }: CollectionsProps) {
   return (
     <section
       id="collections"
-      className="relative overflow-hidden bg-zinc-950 py-24 px-4 sm:px-6 lg:px-8 border-b border-zinc-900"
+      className="relative overflow-hidden bg-[#F2F0EF] py-24 px-4 sm:px-6 lg:px-8 border-b border-[#D4AF37]/10"
     >
       {/* Background soft lighting */}
       <div className="absolute top-1/2 left-1/3 h-96 w-96 rounded-full bg-amber-500/5 blur-[100px] pointer-events-none" />
@@ -53,18 +53,18 @@ export default function Collections({ onQuickView }: CollectionsProps) {
             <Sparkles className="h-4 w-4 text-amber-500" />
             <span className="font-mono text-[10px] tracking-widest uppercase font-semibold">PRASHANT PORTFOLIO</span>
           </div>
-          <h2 className="font-serif text-3.5xl font-light tracking-wide text-white sm:text-5xl">
+          <h2 className="font-serif text-3.5xl font-light tracking-wide text-[#050505] sm:text-5xl">
             Our Elite <span className="font-serif font-semibold italic text-amber-400">Collections</span>
           </h2>
           <div className="mx-auto h-[1px] w-24 bg-gradient-to-r from-transparent via-amber-400 to-transparent pt-0.5" />
-          <p className="mx-auto max-w-2xl font-serif text-sm italic text-zinc-400">
+          <p className="mx-auto max-w-2xl font-serif text-sm italic text-[#5c5c5c]">
             Explore meticulously hallmarked gold bangles, precious Polki sets, and flawless diamonds that reflect unparalleled Rajasthani heritage.
           </p>
         </div>
 
         {/* Categories Tab Bar */}
         <div className="flex justify-center mb-12">
-          <div className="flex flex-wrap items-center justify-center gap-2 rounded-full border border-zinc-800 bg-neutral-950/70 p-1.5 shadow-[0_4px_25px_rgba(0,0,0,0.6)] backdrop-blur-xl">
+          <div className="flex flex-wrap items-center justify-center gap-2 rounded-full border border-[#D4AF37]/15 bg-[#F7F4F1] p-1.5 shadow-[0_4px_25px_rgba(0,0,0,0.08)] backdrop-blur-xl">
             {tabs.map((tab) => (
               <button
                 key={tab.value}
@@ -72,7 +72,7 @@ export default function Collections({ onQuickView }: CollectionsProps) {
                 className={`relative rounded-full px-5 py-2.5 font-sans text-[10px] uppercase tracking-widest font-semibold transition-all duration-300 cursor-pointer ${
                   activeTab === tab.value
                     ? 'text-neutral-950 font-bold z-10'
-                    : 'text-zinc-400 hover:text-amber-400'
+                    : 'text-[#5c5c5c] hover:text-[#D4AF37]'
                 }`}
               >
                 <span className="relative z-10">{tab.label}</span>
@@ -102,7 +102,7 @@ export default function Collections({ onQuickView }: CollectionsProps) {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.6 }}
                 key={product.id}
-                className="group relative overflow-hidden rounded-sm border border-zinc-900 bg-neutral-950 p-3 transition-all duration-500 hover:border-amber-500/40 hover:shadow-[0_0_25px_rgba(245,158,11,0.06)]"
+                className="group relative overflow-hidden rounded-sm border border-[#D4AF37]/10 bg-[#F7F4F1] p-3 transition-all duration-500 hover:border-[#D4AF37]/30 hover:shadow-[0_0_25px_rgba(212,175,55,0.08)]"
               >
                 {/* Product Image Stage */}
                 <div className="relative aspect-square overflow-hidden rounded-sm bg-zinc-900">
@@ -115,14 +115,14 @@ export default function Collections({ onQuickView }: CollectionsProps) {
                   
                   {/* Subtle top-left badge if featured */}
                   {product.isFeatured && (
-                    <div className="absolute top-3 left-3 flex items-center space-x-1 border border-amber-400/20 bg-black/85 px-2.5 py-1 rounded-full backdrop-blur-sm shadow-md">
+                    <div className="absolute top-3 left-3 flex items-center space-x-1 border border-amber-400/20 bg-white/90 px-2.5 py-1 rounded-full backdrop-blur-sm shadow-md">
                       <Sparkles className="h-2.5 w-2.5 text-amber-400" />
                       <span className="text-[8px] font-mono tracking-widest text-amber-300 uppercase">SIGNATURE</span>
                     </div>
                   )}
 
                   {/* Dark mask overlay + Quick View on hover */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
+                  <div className="absolute inset-0 flex items-center justify-center bg-[#050505]/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
                     <button
                       onClick={() => {
                         playLuxuryChime();
@@ -145,11 +145,11 @@ export default function Collections({ onQuickView }: CollectionsProps) {
                     </span>
                     <div className="flex items-center space-x-1 text-amber-400">
                       <Star className="h-3 w-3 fill-amber-400" />
-                      <span className="text-[10px] font-semibold text-zinc-300">{product.rating}</span>
+                      <span className="text-[10px] font-semibold text-[#5c5c5c]">{product.rating}</span>
                     </div>
                   </div>
 
-                  <h3 className="mt-2.5 font-serif text-sm tracking-wide text-white group-hover:text-amber-300 transition-colors duration-300 truncate">
+                  <h3 className="mt-2.5 font-serif text-sm tracking-wide text-[#050505] group-hover:text-[#D4AF37] transition-colors duration-300 truncate">
                     {product.name}
                   </h3>
                   

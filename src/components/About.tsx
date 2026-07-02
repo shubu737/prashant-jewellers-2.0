@@ -11,7 +11,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-neutral-950 py-24 px-4 sm:px-6 lg:px-8 border-b border-zinc-900"
+      className="relative overflow-hidden bg-[#F2F0EF] py-24 px-4 sm:px-6 lg:px-8 border-b border-[#D4AF37]/10"
     >
       {/* Background shadows and glows */}
       <div className="absolute top-1/4 -left-64 h-[500px] w-[500px] rounded-full bg-amber-500/5 blur-[120px] pointer-events-none" />
@@ -27,7 +27,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 1, ease: 'easeOut' }}
-              className="relative aspect-4/5 w-full overflow-hidden rounded-sm border border-zinc-800 bg-zinc-900 shadow-2xl"
+              className="relative aspect-4/5 w-full overflow-hidden rounded-sm border border-[#D4AF37]/10 bg-[#F7F4F1] shadow-2xl"
             >
               <img
                 src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=80"
@@ -53,7 +53,7 @@ export default function About() {
                     3 Decades of Purity
                   </span>
                 </div>
-                <p className="font-sans text-xs leading-relaxed text-zinc-400">
+                <p className="font-sans text-xs leading-relaxed text-[#5c5c5c]">
                   Prashant Jewellers is a registered brand serving Rajasthani royalty and families in Rawatbhata since {STORE_INFO.foundedYear}.
                 </p>
                 <div className="mt-2 text-[10px] uppercase tracking-widest text-[#D4AF37] font-semibold border-t border-zinc-805 pt-2">
@@ -81,7 +81,7 @@ export default function About() {
                 <div className="h-[1px] w-6 bg-amber-500" />
                 <span className="font-mono text-[10px] tracking-widest uppercase font-semibold">OUR INHERITANCE</span>
               </div>
-              <h2 className="font-serif text-3xl font-light tracking-wide text-white sm:text-4.5xl leading-tight">
+              <h2 className="font-serif text-3xl font-light tracking-wide text-[#050505] sm:text-4.5xl leading-tight">
                 Crafting Legacies of <br />
                 <span className="font-serif font-semibold italic text-amber-400">
                   Trust & Elegance
@@ -94,12 +94,12 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-6 font-serif text-zinc-300 leading-relaxed text-sm sm:text-base"
+              className="space-y-6 font-serif text-[#5c5c5c] leading-relaxed text-sm sm:text-base"
             >
               <p>
                 For over thirty years, <strong className="text-white">Prashant Jewellers</strong> has remained Rawatbhata's most trusted home of bespoke gold ornaments and certified diamonds. Founded with a vision to provide authentic, highly artistic Indian jewelry, we combine generational Rajasthani goldsmith techniques with contemporary designs.
               </p>
-              <p className="font-sans text-xs leading-relaxed text-zinc-400 uppercase tracking-wider">
+              <p className="font-sans text-xs leading-relaxed text-[#5c5c5c] uppercase tracking-wider">
                 "We believe every piece tells a deep emotional story—of commitment, celebrations, and enduring inheritances. Our gold is not just an asset; it is an intimate work of soul."
               </p>
             </motion.div>
@@ -117,8 +117,8 @@ export default function About() {
                   <Compass className="h-4 w-4" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-sm font-semibold tracking-wide text-white">Honest Gold Valuations</h4>
-                  <p className="font-sans text-xs text-zinc-400 mt-1">Live market benchmark rates with clear invoices detailing weight and work margins.</p>
+                  <h4 className="font-serif text-sm font-semibold tracking-wide text-[#050505]">Honest Gold Valuations</h4>
+                  <p className="font-sans text-xs text-[#5c5c5c] mt-1">Live market benchmark rates with clear invoices detailing weight and work margins.</p>
                 </div>
               </div>
 
@@ -127,8 +127,8 @@ export default function About() {
                   <Heart className="h-4 w-4" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-sm font-semibold tracking-wide text-white">Bespoke Artisan Tailoring</h4>
-                  <p className="font-sans text-xs text-zinc-400 mt-1">Work step-by-step with master-smiths to draft customizable templates for your wedding day.</p>
+                  <h4 className="font-serif text-sm font-semibold tracking-wide text-[#050505]">Bespoke Artisan Tailoring</h4>
+                  <p className="font-sans text-xs text-[#5c5c5c] mt-1">Work step-by-step with master-smiths to draft customizable templates for your wedding day.</p>
                 </div>
               </div>
             </motion.div>
@@ -141,8 +141,8 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex items-center space-x-4 pt-4"
             >
-              <div className="h-10 w-10 overflow-hidden rounded-full border border-amber-500/40 bg-zinc-800">
-                <div className="flex h-full w-full items-center justify-center font-serif text-sm font-bold text-amber-300">PS</div>
+              <div className="h-10 w-10 overflow-hidden rounded-full border border-amber-500/40 bg-[#F7F4F1]">
+                <div className="flex h-full w-full items-center justify-center font-serif text-sm font-bold text-[#D4AF37]">PS</div>
               </div>
               <div>
                 <div className="font-serif text-xs font-semibold tracking-wider text-white uppercase">Prashant Soni</div>

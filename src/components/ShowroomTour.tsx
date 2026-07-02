@@ -195,7 +195,7 @@ export default function ShowroomTour() {
   return (
     <section
       id="showroom-tour"
-      className="relative overflow-hidden bg-neutral-950 py-24 px-4 sm:px-6 lg:px-8 border-b border-zinc-900"
+      className="relative overflow-hidden bg-[#F2F0EF] py-24 px-4 sm:px-6 lg:px-8 border-b border-[#D4AF37]/10"
     >
       {/* Visual luxury gold dust and lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-amber-500/5 blur-[150px] pointer-events-none" />
@@ -209,10 +209,10 @@ export default function ShowroomTour() {
             <span className="font-mono text-[10px] tracking-[0.4em] uppercase font-semibold">Virtual Walkthrough</span>
             <span className="h-px w-6 bg-[#D4AF37]" />
           </div>
-          <h2 className="font-serif text-3.5xl font-light tracking-wide text-white sm:text-5xl">
+          <h2 className="font-serif text-3.5xl font-light tracking-wide text-[#050505] sm:text-5xl">
             Experience Our <span className="font-serif font-bold italic text-[#D4AF37]">Boutique Interiors</span>
           </h2>
-          <p className="font-sans text-xs uppercase tracking-widest text-zinc-400 max-w-xl mx-auto leading-relaxed">
+          <p className="font-sans text-xs uppercase tracking-widest text-[#5c5c5c] max-w-xl mx-auto leading-relaxed">
             Take a cinematic visual tour of our showroom. Discover the fine hallmarks of Rajasthani trust, expert gold craftsmanship, and luxurious consulting galleries.
           </p>
         </div>
@@ -231,8 +231,8 @@ export default function ShowroomTour() {
               onDragOver={handleDrag}
               onDragLeave={handleDrag}
               onDrop={handleDrop}
-              className={`relative aspect-video w-full rounded-sm border overflow-hidden bg-black transition-all duration-300 ${
-                dragActive ? 'border-[#D4AF37] scale-[1.01] shadow-[0_0_20px_rgba(212,175,55,0.15)]' : 'border-zinc-800 shadow-2xl'
+              className={`relative aspect-video w-full rounded-sm border overflow-hidden bg-[#F2F0EF] transition-all duration-300 ${
+                dragActive ? 'border-[#D4AF37] scale-[1.01] shadow-[0_0_20px_rgba(212,175,55,0.15)]' : 'border-[#D4AF37]/10 shadow-2xl'
               }`}
             >
               {videoSrc ? (
@@ -260,9 +260,9 @@ export default function ShowroomTour() {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.8 }}
                         onClick={handlePlayPause}
-                        className="absolute inset-0 flex items-center justify-center bg-black/45 cursor-pointer z-10 hover:bg-black/30 transition-all duration-300"
+                        className="absolute inset-0 flex items-center justify-center bg-white/90 cursor-pointer z-10 hover:bg-white/75 transition-all duration-300"
                       >
-                        <div className="h-16 w-16 flex items-center justify-center rounded-full border border-[#D4AF37]/50 bg-black/90 text-[#D4AF37] shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:scale-105 transition-transform">
+                        <div className="h-16 w-16 flex items-center justify-center rounded-full border border-[#D4AF37]/50 bg-[#F7F4F1] text-[#050505] shadow-[0_0_25px_rgba(212,175,55,0.16)] hover:scale-105 transition-transform">
                           <Play className="h-8 w-8 fill-[#D4AF37] ml-1" />
                         </div>
                       </motion.div>
@@ -270,7 +270,7 @@ export default function ShowroomTour() {
                   </AnimatePresence>
 
                   {/* Deep custom controls bar overlay */}
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-4 flex flex-col space-y-2.5 z-20 opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-white/80 via-[#F2F0EF]/90 to-transparent p-4 flex flex-col space-y-2.5 z-20 opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity duration-300">
                     
                     {/* Scrub bar */}
                     <div 
@@ -284,7 +284,7 @@ export default function ShowroomTour() {
                     </div>
 
                     {/* HUD Controls */}
-                    <div className="flex items-center justify-between text-white text-xs">
+                    <div className="flex items-center justify-between text-[#050505] text-xs">
                       <div className="flex items-center space-x-4">
                         <button 
                           onClick={handlePlayPause}
@@ -297,16 +297,16 @@ export default function ShowroomTour() {
                           onClick={handleMuteToggle}
                           className="hover:text-[#D4AF37] cursor-pointer transition-colors"
                         >
-                          {isMuted ? <VolumeX className="h-4.5 w-4.5 text-zinc-500" /> : <Volume2 className="h-4.5 w-4.5" />}
+                        {isMuted ? <VolumeX className="h-4.5 w-4.5 text-[#6b7280]" /> : <Volume2 className="h-4.5 w-4.5" />}
                         </button>
 
-                        <span className="font-mono text-[10px] text-zinc-400">
+                        <span className="font-mono text-[10px] text-[#6b7280]">
                           {formatTime(videoRef.current?.currentTime || 0)} / {formatTime(duration)}
                         </span>
                       </div>
 
                       <div className="flex items-center space-x-3">
-                        <span className="text-[9px] uppercase tracking-wider text-zinc-500 font-semibold font-sans hidden sm:inline">
+                        <span className="text-[9px] uppercase tracking-wider text-[#6b7280] font-semibold font-sans hidden sm:inline">
                           Rawatbhata Tour Walkthrough
                         </span>
                         <button 
@@ -322,30 +322,30 @@ export default function ShowroomTour() {
                 </>
               ) : (
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center space-y-4">
-                  <Upload className="h-10 w-10 text-zinc-600 animate-pulse" />
-                  <p className="font-serif text-sm text-zinc-400">No Custom Walkthrough Loaded</p>
+                  <Upload className="h-10 w-10 text-[#6b7280] animate-pulse" />
+                  <p className="font-serif text-sm text-[#6b7280]">No Custom Walkthrough Loaded</p>
                 </div>
               )}
 
               {/* Upload Drop overlay hint */}
               {dragActive && (
-                <div className="absolute inset-0 bg-black/90 flex flex-col items-center justify-center border-2 border-dashed border-[#D4AF37] z-30 pointer-events-none">
+                <div className="absolute inset-0 bg-white/95 flex flex-col items-center justify-center border-2 border-dashed border-[#D4AF37] z-30 pointer-events-none">
                   <Upload className="h-12 w-12 text-[#D4AF37] mb-2" />
                   <p className="font-serif text-base text-[#D4AF37] font-semibold">Drop Your Store Walkthrough Video Here</p>
-                  <p className="text-[10px] font-sans text-zinc-500 uppercase tracking-widest mt-1">Accepts any MP4 files</p>
+                  <p className="text-[10px] font-sans text-[#5c5c5c] uppercase tracking-widest mt-1">Accepts any MP4 files</p>
                 </div>
               )}
             </div>
 
             {/* Drag & Drop instruction bar */}
-            <div className="flex flex-col sm:flex-row items-center sm:justify-between p-4 border border-zinc-900 bg-neutral-900/40 rounded-sm space-y-4 sm:space-y-0">
+            <div className="flex flex-col sm:flex-row items-center sm:justify-between p-4 border border-[#D4AF37]/10 bg-[#F7F4F1] rounded-sm space-y-4 sm:space-y-0">
               <div className="space-y-1 text-center sm:text-left">
-                <p className="font-serif text-xs font-semibold text-white">Have the original Rawatbhata showroom video file?</p>
-                <p className="font-sans text-[10px] text-zinc-500">Drag & drop your store MP4 file inside the player above, or click browse to import.</p>
+                <p className="font-serif text-xs font-semibold text-[#050505]">Have the original Rawatbhata showroom video file?</p>
+                <p className="font-sans text-[10px] text-[#5c5c5c]">Drag & drop your store MP4 file inside the player above, or click browse to import.</p>
               </div>
               <button
                 onClick={triggerFileBrowser}
-                className="inline-flex items-center space-x-2 border border-[#D4AF37]/50 hover:border-[#D4AF37] bg-[#050505] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black hover:font-bold text-[10px] tracking-widest uppercase font-semibold px-4.5 py-2.5 cursor-pointer transition-all duration-300"
+                className="inline-flex items-center space-x-2 border border-[#D4AF37]/50 hover:border-[#D4AF37] bg-white text-[#050505] hover:bg-[#D4AF37] hover:text-black hover:font-bold text-[10px] tracking-widest uppercase font-semibold px-4.5 py-2.5 cursor-pointer transition-all duration-300"
               >
                 <Upload className="h-3 w-3" />
                 <span>Browse Video</span>
@@ -369,25 +369,25 @@ export default function ShowroomTour() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="border border-[#D4AF37]/20 p-6 bg-neutral-900/30 rounded-sm relative"
+              className="border border-[#D4AF37]/20 p-6 bg-white/90 rounded-sm relative"
             >
               <div className="absolute top-0 right-0 bg-[#D4AF37]/10 text-[#D4AF37] border-b border-l border-[#D4AF37]/20 text-[8px] uppercase tracking-widest px-3 py-1 font-mono font-semibold">
                 Flagship HQ Since 1957
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-center space-x-2 text-zinc-400">
+                <div className="flex items-center space-x-2 text-[#5c5c5c]">
                   <MapPin className="h-4.5 w-4.5 text-[#D4AF37]" />
-                  <span className="font-serif text-xs font-semibold uppercase tracking-wider text-white">RAWATBHATA BOUTIQUE</span>
+                  <span className="font-serif text-xs font-semibold uppercase tracking-wider text-[#050505]">RAWATBHATA BOUTIQUE</span>
                 </div>
 
-                <h3 className="font-serif text-xl font-light text-white leading-snug">
+                <h3 className="font-serif text-xl font-light text-[#050505] leading-snug">
                   Shop No. 2, Shopping Complex, <br />
                   <span className="font-serif font-semibold italic text-[#D4AF37]">Rawatbhata, Rajasthan - 323307</span>
                 </h3>
 
                 {/* Highly Celebrated Google Maps Ratings shown in video */}
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 border border-zinc-800 bg-[#060606] rounded-sm space-y-3 sm:space-y-0">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 border border-[#D4AF37]/10 bg-white/95 rounded-sm space-y-3 sm:space-y-0">
                   <div className="space-y-1">
                     <div className="flex items-center space-x-1">
                       <Star className="h-3.5 w-3.5 text-[#D4AF37] fill-[#D4AF37]" />
@@ -395,9 +395,9 @@ export default function ShowroomTour() {
                       <Star className="h-3.5 w-3.5 text-[#D4AF37] fill-[#D4AF37]" />
                       <Star className="h-3.5 w-3.5 text-[#D4AF37] fill-[#D4AF37]" />
                       <Star className="h-3.5 w-3.5 text-[#D4AF37] fill-[#D4AF37]" />
-                      <span className="font-mono text-xs text-white font-bold ml-1">5.0</span>
+                      <span className="font-mono text-xs text-[#050505] font-bold ml-1">5.0</span>
                     </div>
-                    <p className="text-[10px] font-sans tracking-tight text-zinc-400 font-medium">174+ Verified Google Reviews</p>
+                    <p className="text-[10px] font-sans tracking-tight text-[#5c5c5c] font-medium">174+ Verified Google Reviews</p>
                   </div>
                   <div className="text-right">
                     <span className="text-[9px] uppercase tracking-widest bg-emerald-900/30 px-2 py-0.5 border border-emerald-500/20 text-emerald-400 font-mono font-semibold">
@@ -406,15 +406,15 @@ export default function ShowroomTour() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono border-t border-zinc-900 pt-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono border-t border-[#D4AF37]/10 pt-4">
                   <div className="space-y-1">
-                    <span className="text-[9px] text-zinc-500 block uppercase font-sans tracking-wide">Contacts</span>
-                    <a href="tel:+919680077124" className="text-zinc-300 hover:text-[#D4AF37] transition-colors block">N. Soni: 9680077124</a>
-                    <a href="tel:+919414444025" className="text-zinc-300 hover:text-[#D4AF37] transition-colors block">K. Soni: 9414444025</a>
+                    <span className="text-[9px] text-[#5c5c5c] block uppercase font-sans tracking-wide">Contacts</span>
+                    <a href="tel:+919680077124" className="text-[#5c5c5c] hover:text-[#D4AF37] transition-colors block">N. Soni: 9680077124</a>
+                    <a href="tel:+919414444025" className="text-[#5c5c5c] hover:text-[#D4AF37] transition-colors block">K. Soni: 9414444025</a>
                   </div>
                   <div className="space-y-1">
-                    <span className="text-[9px] text-zinc-500 block uppercase font-sans tracking-wide">Operating Hours</span>
-                    <span className="text-zinc-300 block">Mon - Sat: 11:00 AM - 9:00 PM</span>
+                    <span className="text-[9px] text-[#5c5c5c] block uppercase font-sans tracking-wide">Operating Hours</span>
+                    <span className="text-[#6b7280] block">Mon - Sat: 11:00 AM - 9:00 PM</span>
                     <span className="text-amber-500 block">Sunday: Closed</span>
                   </div>
                 </div>
@@ -433,19 +433,19 @@ export default function ShowroomTour() {
                     <div
                       key={idx}
                       onClick={() => seekTo(item.seconds)}
-                      className="group flex items-start space-x-4 border border-zinc-900 p-3 bg-neutral-900/10 hover:border-[#D4AF37]/30 hover:bg-[#080808] rounded-sm cursor-pointer transition-all duration-300"
+                      className="group flex items-start space-x-4 border border-[#D4AF37]/10 p-3 bg-white/90 hover:border-[#D4AF37]/30 hover:bg-[#F7F4F1] rounded-sm cursor-pointer transition-all duration-300"
                     >
-                      <div className="flex-shrink-0 font-mono text-[10px] px-2 py-1 border border-zinc-800 text-[#D4AF37] bg-black rounded-sm group-hover:border-[#D4AF37]/40">
+                      <div className="flex-shrink-0 font-mono text-[10px] px-2 py-1 border border-[#D4AF37]/10 text-[#D4AF37] bg-white rounded-sm group-hover:border-[#D4AF37]/40">
                         {item.time}
                       </div>
                       <div className="flex-grow space-y-1">
                         <div className="flex items-center justify-between">
-                          <span className="font-serif text-xs font-bold text-white group-hover:text-[#D4AF37] transition-colors">
+                          <span className="font-serif text-xs font-bold text-[#050505] group-hover:text-[#D4AF37] transition-colors">
                             {item.title}
                           </span>
-                          <ChevronRight className="h-3 w-3 text-zinc-600 group-hover:text-[#D4AF37] group-hover:translate-x-0.5 transition-all" />
+                          <ChevronRight className="h-3 w-3 text-[#6b7280] group-hover:text-[#D4AF37] group-hover:translate-x-0.5 transition-all" />
                         </div>
-                        <p className="font-sans text-[11px] leading-relaxed text-zinc-500 group-hover:text-zinc-400 transition-colors">
+                        <p className="font-sans text-[11px] leading-relaxed text-[#5c5c5c] group-hover:text-[#5c5c5c] transition-colors">
                           {item.text}
                         </p>
                       </div>
