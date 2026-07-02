@@ -117,7 +117,7 @@ export default function App() {
               </motion.div>
 
               <div className="space-y-2">
-                <h1 className="font-serif text-3xl font-light tracking-[0.25em] text-[#050505]">
+                <h1 className="font-serif text-3xl font-light tracking-[0.25em] text-white">
                   PRASHANT
                 </h1>
                 <p className="text-[10px] tracking-[0.4em] text-amber-500 uppercase font-semibold">
