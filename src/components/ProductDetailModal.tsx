@@ -100,7 +100,9 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
                 {/* Category Pill */}
                 <div className="flex items-center space-x-2 text-amber-400">
                   <Sparkles className="h-3.5 w-3.5 text-amber-500 animate-pulse" />
-                  <span className="text-[10px] uppercase tracking-[0.25em] font-mono text-[#4A4A4A]">
+                  <span className="text-[10px] uppercase tracking-[0.25em] font-mono text-[#4A4A4A]">{product.category}</span>
+                </div>
+
                 <h2 className="font-serif text-2xl md:text-3.5xl font-light text-[#1A1A1A] leading-tight">
                   {product.name}
                 </h2>
