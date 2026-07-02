@@ -12,7 +12,7 @@ export const STORE_INFO = {
   location: "Shop No. 2, Shopping Complex, Rawatbhata, Rajasthan - 323307",
   phone: "+91 96800 77124, +91 9414444025",
   whatsapp: "+919680077124",
-  email: "info@prashantjewellers.com",
+  email: "prashantjewellers1777@gmail.com",
   timings: "Monday - Saturday: 11:00 AM to 9:00 PM (Sunday: Closed)",
   mapsIframeUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14436.257045155985!2d75.67205799999999!3d24.96425985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396fc3d5966bfceb%3A0xe5a64a386cb69b30!2sRawatbhata%2C%20Rajasthan%20323307!5e0!3m2!1sen!2sin!4v1717891200000!5m2!1sen!2sin"
 };
