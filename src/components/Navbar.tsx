@@ -70,8 +70,8 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
                 <span className="font-serif text-lg font-bold tracking-widest uppercase text-white hover:text-amber-400 transition-colors duration-300">
                   Prashant
                 </span>
-                <span className="text-[10px] tracking-[0.25em] uppercase text-amber-500 font-medium">
-                  Jewellers • Rajasthan
+                <span className="text-[10px] tracking-[0.25em] uppercase text-amber-400 font-medium">
+                  Jewellers
                 </span>
               </div>
             </div>
