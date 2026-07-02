@@ -32,40 +32,54 @@ export default function Founder() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Photo */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="relative flex justify-center lg:justify-end"
-          >
-            <div className="relative">
-              {/* Gold border frame */}
-              <div className="absolute -inset-3 border border-[#D4AF37]/20 rounded-sm pointer-events-none" />
-              <div className="absolute -inset-6 border border-[#D4AF37]/8 rounded-sm pointer-events-none" />
+          <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="relative flex justify-center lg:justify-end"
+            >
+              <div className="relative">
+                {/* Gold border frame */}
+                <div className="absolute -inset-3 border border-[#D4AF37]/20 rounded-sm pointer-events-none" />
+                <div className="absolute -inset-6 border border-[#D4AF37]/8 rounded-sm pointer-events-none" />
 
-              <img
-                src="/founder.jpg"
-                alt="Mr. Nilesh Kumar Soni — Founder, Prashant Jewellers"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80';
-                }}
-                className="w-72 sm:w-80 lg:w-96 aspect-[3/4] object-cover object-top rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
-              />
+                <img
+                  src="/founder.jpg"
+                  alt="Mr. Nilesh Kumar Soni — Founder, Prashant Jewellers"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80';
+                  }}
+                  className="w-72 sm:w-80 lg:w-96 aspect-[3/4] object-cover object-top rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+                />
 
-              {/* Founder badge overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6">
-                <p className="font-serif text-lg font-semibold text-white">Mr. Nilesh Kumar Soni</p>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-[#D4AF37] mt-0.5">Founder, Prashant Jewellers</p>
+                {/* Founder badge overlay */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6">
+                  <p className="font-serif text-lg font-semibold text-white">Mr. Nilesh Kumar Soni</p>
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-[#D4AF37] mt-0.5">Founder, Prashant Jewellers</p>
+                </div>
+
+                {/* Since badge */}
+                <div className="absolute top-4 right-4 bg-black/80 border border-[#D4AF37]/30 px-3 py-2 text-center backdrop-blur-sm">
+                  <p className="font-serif text-lg font-bold text-[#D4AF37] leading-none">1957</p>
+                  <p className="font-mono text-[8px] uppercase tracking-widest text-zinc-400 mt-0.5">Est.</p>
+                </div>
               </div>
+            </motion.div>
 
-              {/* Since badge */}
-              <div className="absolute top-4 right-4 bg-black/80 border border-[#D4AF37]/30 px-3 py-2 text-center backdrop-blur-sm">
-                <p className="font-serif text-lg font-bold text-[#D4AF37] leading-none">1957</p>
-                <p className="font-mono text-[8px] uppercase tracking-widest text-zinc-400 mt-0.5">Est.</p>
-              </div>
-            </div>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+              className="rounded-sm border border-[#D4AF37]/20 bg-neutral-900/70 p-5 sm:p-6"
+            >
+              <p className="font-serif text-base sm:text-lg leading-relaxed text-zinc-200">
+                At just 15 years old, Neelesh Soni stepped into the family jewellery business with a dream to create something extraordinary. Through years of perseverance, honesty, and exceptional craftsmanship, he elevated the business to new heights. Today, his legacy is built on trust, unmatched quality, and timeless designs that celebrate life’s most precious moments.
+              </p>
+            </motion.div>
+          </div>
 
           {/* Details */}
           <motion.div
