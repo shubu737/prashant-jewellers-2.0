@@ -136,7 +136,7 @@ export default function App() {
               </div>
 
               <span className="font-serif text-[11px] italic text-zinc-500 tracking-wider">
-                Unveiling 30 Years of Purity...
+                Unveiling 69 Years of Purity...
               </span>
             </div>
           </motion.div>
