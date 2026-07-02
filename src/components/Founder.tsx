@@ -55,7 +55,7 @@ export default function Founder() {
                 />
 
                 {/* Founder badge overlay */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1A1A1A]/85 via-[#1A1A1A]/40 to-transparent p-6">
                   <p className="font-serif text-lg font-semibold text-white">Mr. Nilesh Kumar Soni</p>
                   <p className="font-mono text-[10px] uppercase tracking-widest text-[#D4AF37] mt-0.5">Founder, Prashant Jewellers</p>
                 </div>
@@ -126,9 +126,9 @@ export default function Founder() {
             </div>
 
             {/* Signature line */}
-            <div className="pt-4 border-t border-zinc-900">
-              <p className="font-serif text-2xl italic text-[#D4AF37]/70">Nilesh Kumar Soni</p>
-              <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-600 mt-1">Founder & Master Jeweller</p>
+            <div className="pt-4 border-t border-[#D4AF37]/20">
+              <p className="font-serif text-2xl italic text-[#D4AF37]">Nilesh Kumar Soni</p>
+              <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-[#5A5A5A] mt-1">Founder & Master Jeweller</p>
             </div>
           </motion.div>
 

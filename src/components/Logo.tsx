@@ -36,7 +36,7 @@ export default function Logo({
       src="/logo.png"
       alt="Prashant Jewellers Logo"
       style={{ width: 'auto', height: `${h}px`, minWidth: `${Math.floor(h * 0.5)}px` }}
-      className={`inline-block object-contain ${className}`}
+      className={`inline-block object-contain drop-shadow-[0_2px_8px_rgba(180,140,60,0.35)] ${className}`}
       initial={animate ? { opacity: 0, scale: 0.95 } : undefined}
       animate={animate ? { opacity: 1, scale: 1 } : undefined}
       transition={{ duration: 0.8, ease: 'easeOut' }}

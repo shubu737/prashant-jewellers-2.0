@@ -79,7 +79,7 @@ export default function Hero({ onExplore }: HeroProps) {
             className="inline-flex items-center space-x-2 rounded-full border border-amber-500/35 bg-amber-500/5 px-4.5 py-1.5 shadow-[0_0_20px_rgba(245,158,11,0.06)] backdrop-blur-md"
           >
             <Sparkles className="h-3.5 w-3.5 text-amber-400 animate-pulse" />
-            <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-amber-300">
+            <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-amber-600">
               Est. {STORE_INFO.foundedYear} • Rawatbhata's Heritage Jewel House
             </span>
           </motion.div>
@@ -96,7 +96,7 @@ export default function Hero({ onExplore }: HeroProps) {
           <motion.div variants={itemVariants} className="space-y-3 sm:space-y-4">
             <h1 className="font-serif text-4xl font-light tracking-[0.16em] text-[#1A1A1A] sm:text-6xl md:text-7.5xl leading-none">
               PRASHANT <br />
-              <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-100 bg-clip-text font-serif font-semibold tracking-[0.18em] text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.15)]">
+              <span className="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 bg-clip-text font-serif font-semibold tracking-[0.18em] text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.3)]">
                 JEWELLERS
               </span>
             </h1>
@@ -146,17 +146,17 @@ export default function Hero({ onExplore }: HeroProps) {
         {/* Exquisite bottom stats banner content */}
         <div className="flex items-center justify-center gap-6 px-4 flex-wrap md:gap-12">
           <div className="flex flex-col items-center">
-            <span className="font-serif text-xl md:text-2xl font-light text-amber-300">100%</span>
+            <span className="font-serif text-xl md:text-2xl font-light text-amber-600">100%</span>
             <span className="text-[9px] tracking-widest uppercase text-[#4A4A4A]">BIS Hallmarked Gold</span>
           </div>
           <div className="hidden md:block h-8 w-[1px] bg-amber-500/25" />
           <div className="flex flex-col items-center">
-            <span className="font-serif text-xl md:text-2xl font-light text-amber-300">Since 1957</span>
+            <span className="font-serif text-xl md:text-2xl font-light text-amber-600">Since 1957</span>
             <span className="text-[9px] tracking-widest uppercase text-[#4A4A4A]">Royal Legacy</span>
           </div>
           <div className="hidden md:block h-8 w-[1px] bg-amber-500/25" />
           <div className="flex flex-col items-center">
-            <span className="font-serif text-xl md:text-2xl font-light text-amber-300">Bespoke</span>
+            <span className="font-serif text-xl md:text-2xl font-light text-amber-600">Bespoke</span>
             <span className="text-[9px] tracking-widest uppercase text-[#4A4A4A]">Custom Rajasthan Crafts</span>
           </div>
         </div>
@@ -170,7 +170,7 @@ export default function Hero({ onExplore }: HeroProps) {
             onClick={() => handleCtaClick('about')}
           >
             <span className="text-[9px] tracking-[0.2em] uppercase text-[#4A4A4A] mb-2 font-mono">SCROLL TO DISCOVER</span>
-            <div className="flex h-8 w-[18px] justify-center rounded-full border border-zinc-700 p-1">
+            <div className="flex h-8 w-[18px] justify-center rounded-full border border-[#D4AF37]/50 p-1">
               <div className="h-2 w-1 rounded-full bg-amber-400" />
             </div>
           </motion.div>

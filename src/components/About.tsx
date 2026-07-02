@@ -35,7 +35,7 @@ export default function About() {
                 className="h-full w-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-[2000ms]"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 via-transparent to-transparent" />
             </motion.div>
 
             {/* Overlapping Absolute Card: 3 Decades of Pride */}
@@ -44,7 +44,7 @@ export default function About() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-              className="absolute -bottom-8 -right-4 sm:-right-8 z-20 max-w-xs rounded-sm border border-amber-500/35 bg-neutral-900/90 p-6 shadow-2xl backdrop-blur-md"
+              className="absolute -bottom-8 -right-4 sm:-right-8 z-20 max-w-xs rounded-sm border border-amber-500/35 bg-[#1A1A1A] p-6 shadow-2xl backdrop-blur-md"
             >
               <div className="flex flex-col space-y-2">
                 <div className="flex items-center space-x-2.5">
@@ -53,7 +53,7 @@ export default function About() {
                     3 Decades of Purity
                   </span>
                 </div>
-                <p className="font-sans text-xs leading-relaxed text-[#5A5A5A]">
+                <p className="font-sans text-xs leading-relaxed text-[#D4AF37]/80">
                   Prashant Jewellers is a registered brand serving Rajasthani royalty and families in Rawatbhata since {STORE_INFO.foundedYear}.
                 </p>
                 <div className="mt-2 text-[10px] uppercase tracking-widest text-[#D4AF37] font-semibold border-t border-zinc-805 pt-2">
@@ -110,7 +110,7 @@ export default function About() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="grid grid-cols-1 gap-6 sm:grid-cols-2 pt-4 border-t border-zinc-900"
+              className="grid grid-cols-1 gap-6 sm:grid-cols-2 pt-4 border-t border-[#D4AF37]/20"
             >
               <div className="flex items-start space-x-3.5">
                 <div className="mt-1 flex h-6 w-6 items-center justify-center rounded-sm bg-amber-500/10 text-amber-400">
@@ -139,7 +139,7 @@ export default function About() {
                 <div className="flex h-full w-full items-center justify-center font-serif text-sm font-bold text-[#D4AF37]">PS</div>
               </div>
               <div>
-                <div className="font-serif text-xs font-semibold tracking-wider text-white uppercase">Prashant Soni</div>
+                <div className="font-serif text-xs font-semibold tracking-wider text-[#1A1A1A] uppercase">Prashant Soni</div>
                 <div className="text-[10px] tracking-widest text-[#D4AF37] font-sans uppercase">Founder & Master Craftsman</div>
               </div>
             </motion.div>
