@@ -55,7 +55,7 @@ export default function Hero({ onExplore }: HeroProps) {
           referrerPolicy="no-referrer"
         />
         {/* Soft gold wash overlay */}
-        <div className="absolute inset-0" style={{ background: 'radial-gradient(circle, transparent, rgba(33,23,21,0.95), #211715)' }} />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(circle, transparent, rgba(33,23,21,0.95), #FAF8F5)' }} />
         <div className="absolute inset-0 bg-gradient-to-t from-[#211715] via-[#211715]/85 to-[#211715]/70" />
       </div>
 
@@ -132,7 +132,7 @@ export default function Hero({ onExplore }: HeroProps) {
 
             <button
               onClick={() => handleCtaClick('visit-us')}
-              className="flex w-56 items-center justify-center space-x-2.5 rounded-sm border border-[#D4AF37]/40 bg-transparent px-8 py-4.5 font-sans text-xs font-medium uppercase tracking-widest text-white transition-all duration-300 hover:border-amber-400 hover:bg-amber-500/10 cursor-pointer shadow-[0_4px_25px_rgba(0,0,0,0.2)] hover:shadow-[0_0_15px_rgba(245,158,11,0.12)]"
+              className="flex w-56 items-center justify-center space-x-2.5 rounded-sm border border-[#D4AF37]/20 bg-white/90 px-8 py-4.5 font-sans text-xs font-medium uppercase tracking-widest text-white transition-all duration-300 hover:border-amber-400 hover:text-black cursor-pointer shadow-[0_4px_25px_rgba(0,0,0,0.1)] hover:shadow-[0_0_15px_rgba(245,158,11,0.12)]"
             >
               <MapPin className="h-4 w-4 text-amber-500" />
               <span>Visit Showroom</span>
