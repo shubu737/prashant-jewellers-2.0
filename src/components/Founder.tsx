@@ -93,11 +93,9 @@ export default function Founder() {
             <div className="relative pl-6 border-l-2 border-[#D4AF37]/40">
               <Quote className="absolute -top-1 -left-3 h-5 w-5 text-[#D4AF37]/40 fill-[#D4AF37]/20" />
                 <p className="font-serif text-lg sm:text-xl font-light italic text-[#5c5c5c] leading-relaxed">
+                  With a passion for perfection and an eye for detail, the founder has dedicated years to creating jewellery that reflects both tradition and modern luxury.
+                </p>
             </div>
-
-            <p className="font-sans text-sm text-[#333333] leading-relaxed">
-              With a passion for perfection and an eye for detail, the founder has dedicated years to creating jewellery that reflects both tradition and modern luxury.
-            </p>
 
             {/* Stats row */}
             <div className="grid grid-cols-3 gap-4 pt-2">
