@@ -136,11 +136,11 @@ export default function About() {
               className="flex items-center space-x-4 pt-4"
             >
               <div className="h-10 w-10 overflow-hidden rounded-full border border-amber-500/40 bg-[#F0EDE8]">
-                <div className="flex h-full w-full items-center justify-center font-serif text-sm font-bold text-[#D4AF37]">PS</div>
+                <div className="flex h-full w-full items-center justify-center font-serif text-sm font-bold text-[#D4AF37]">NS</div>
               </div>
               <div>
-                <div className="font-serif text-xs font-semibold tracking-wider text-[#1A1A1A] uppercase">Prashant Soni</div>
-                <div className="text-[10px] tracking-widest text-[#D4AF37] font-sans uppercase">Founder & Master Craftsman</div>
+                <div className="font-serif text-xs font-semibold tracking-wider text-[#1A1A1A] uppercase">Nilesh Soni</div>
+                <div className="text-[10px] tracking-widest text-[#D4AF37] font-sans uppercase">Founder &amp; Master Craftsman</div>
               </div>
             </motion.div>
 
