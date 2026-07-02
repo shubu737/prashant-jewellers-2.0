@@ -36,8 +36,7 @@ export default function Logo({
     <motion.img
       src="/logo-v2.png"
       alt="Prashant Jewellers Logo"
-      width={w}
-      height={h}
+      style={{ width: 'auto', height: `${h}px`, minWidth: `${Math.floor(h * 0.4)}px` }}
       className={`inline-block object-contain ${className}`}
       initial={animate ? { opacity: 0, scale: 0.95 } : undefined}
       animate={animate ? { opacity: 1, scale: 1 } : undefined}
