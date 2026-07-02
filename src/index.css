@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Montserrat", system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Lato", system-ui, -apple-system, sans-serif;
 
   /* Custom font sizes not in Tailwind defaults */
   --text-3\.5xl: 2rem;
@@ -81,7 +81,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #FAF8F5;
 }
 
 ::-webkit-scrollbar-thumb {

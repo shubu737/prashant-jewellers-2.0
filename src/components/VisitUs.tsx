@@ -54,7 +54,7 @@ export default function VisitUs() {
   return (
     <section
       id="visit-us"
-      className="relative overflow-hidden bg-[#F2F0EF] py-24 px-4 sm:px-6 lg:px-8 border-b border-[#D4AF37]/10"
+      className="relative overflow-hidden bg-[#FAF8F5] py-24 px-4 sm:px-6 lg:px-8 border-b border-[#D4AF37]/10"
     >
       {/* Editorial Aesthetic: Thin gold outer ambient frames */}
       <div className="absolute inset-x-12 bottom-0 h-[1.5px] bg-[#D4AF37]/10" />
@@ -69,11 +69,11 @@ export default function VisitUs() {
                 <span className="h-px w-8 bg-[#D4AF37]" />
                 <span className="font-mono text-[10px] tracking-[0.4em] uppercase font-semibold">BOUTIQUE ADDRESS</span>
               </div>
-              <h2 className="font-serif text-3.5xl font-light tracking-wide text-[#050505] sm:text-5.5xl">
+              <h2 className="font-serif text-3.5xl font-light tracking-wide text-[#1A1A1A] sm:text-5.5xl">
                 The Flagship <br />
                 <span className="font-serif font-bold italic text-[#D4AF37]">Rawatbhata Showroom</span>
               </h2>
-              <p className="font-serif text-sm italic text-[#5c5c5c]">
+              <p className="font-serif text-sm italic text-[#5A5A5A]">
                 Plan a personal visit to explore pure certified gold ornaments and exclusive bridal design consultations under secure, luxurious private comfort.
               </p>
             </div>
@@ -85,8 +85,8 @@ export default function VisitUs() {
                   <MapPin className="h-4.5 w-4.5" />
                 </div>
                 <div className="space-y-1">
-                  <span className="text-[10px] uppercase tracking-wider text-[#5c5c5c] font-sans block">Address</span>
-                  <span className="font-sans text-xs text-[#5c5c5c] font-semibold leading-relaxed">
+                  <span className="text-[10px] uppercase tracking-wider text-[#5A5A5A] font-sans block">Address</span>
+                  <span className="font-sans text-xs text-[#5A5A5A] font-semibold leading-relaxed">
                     {STORE_INFO.location}
                   </span>
                 </div>
@@ -97,10 +97,10 @@ export default function VisitUs() {
                   <Phone className="h-4.5 w-4.5" />
                 </div>
                 <div className="space-y-1">
-                  <span className="text-[10px] uppercase tracking-wider text-[#5c5c5c] font-sans block">Call / Inquiries</span>
+                  <span className="text-[10px] uppercase tracking-wider text-[#5A5A5A] font-sans block">Call / Inquiries</span>
                   <a
                     href={`tel:${STORE_INFO.phone}`}
-                    className="font-sans text-xs text-[#5c5c5c] font-semibold hover:text-[#D4AF37] transition-colors"
+                    className="font-sans text-xs text-[#5A5A5A] font-semibold hover:text-[#D4AF37] transition-colors"
                   >
                     {STORE_INFO.phone}
                   </a>
@@ -112,8 +112,8 @@ export default function VisitUs() {
                   <Clock className="h-4.5 w-4.5" />
                 </div>
                 <div className="space-y-1">
-                  <span className="text-[10px] uppercase tracking-wider text-[#5c5c5c] font-sans block">Hours of Reception</span>
-                  <span className="font-sans text-xs text-[#5c5c5c] font-semibold leading-relaxed">
+                  <span className="text-[10px] uppercase tracking-wider text-[#5A5A5A] font-sans block">Hours of Reception</span>
+                  <span className="font-sans text-xs text-[#5A5A5A] font-semibold leading-relaxed">
                     {STORE_INFO.timings}
                   </span>
                 </div>
@@ -124,8 +124,8 @@ export default function VisitUs() {
                   <Landmark className="h-4.5 w-4.5" />
                 </div>
                 <div className="space-y-1">
-                  <span className="text-[10px] uppercase tracking-wider text-[#5c5c5c] font-sans block">Showroom Spot</span>
-                  <span className="font-sans text-xs text-[#5c5c5c] font-semibold leading-relaxed">
+                  <span className="text-[10px] uppercase tracking-wider text-[#5A5A5A] font-sans block">Showroom Spot</span>
+                  <span className="font-sans text-xs text-[#5A5A5A] font-semibold leading-relaxed">
                     Shopping Complex, near Bus Stand
                   </span>
                 </div>
@@ -133,7 +133,7 @@ export default function VisitUs() {
             </div>
 
             {/* Embedded maps iframe element styled gracefully */}
-            <div className="relative overflow-hidden border border-[#D4AF37]/15 bg-[#F7F4F1] p-1.5 rounded-sm shadow-xl">
+            <div className="relative overflow-hidden border border-[#D4AF37]/15 bg-[#F0EDE8] p-1.5 rounded-sm shadow-xl">
               <iframe
                 title="Google Maps Landmark for Prashant Jewellers Rawatbhata"
                 src={STORE_INFO.mapsIframeUrl}
@@ -144,7 +144,7 @@ export default function VisitUs() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-              <div className="absolute top-4 left-4 bg-white/90 border border-amber-500/30 text-[9px] uppercase tracking-widest text-[#050505] px-3 py-1 font-mono rounded-sm">
+              <div className="absolute top-4 left-4 bg-white/90 border border-amber-500/30 text-[9px] uppercase tracking-widest text-[#1A1A1A] px-3 py-1 font-mono rounded-sm">
                 MAP LOCATION ACCREDITATION
               </div>
             </div>
@@ -158,10 +158,10 @@ export default function VisitUs() {
             <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#D4AF37]" />
 
             <div className="space-y-5 mb-8">
-              <h3 className="font-serif text-2xl font-light text-[#050505] tracking-wide">
+              <h3 className="font-serif text-2xl font-light text-[#1A1A1A] tracking-wide">
                 Arrange a <span className="italic font-bold text-[#D4AF37]">Private Showcase</span>
               </h3>
-              <p className="font-sans text-xs text-[#5c5c5c] leading-relaxed uppercase tracking-wider">
+              <p className="font-sans text-xs text-[#5A5A5A] leading-relaxed uppercase tracking-wider">
                 This website functions as a secure catalog exhibition. To view prices, evaluate gems, or formulate custom orders, kindly register a viewing session below.
               </p>
             </div>
@@ -179,7 +179,7 @@ export default function VisitUs() {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Enter your name"
-                    className="w-full bg-white/90 border border-[#D4AF37]/10 text-[#050505] px-4 py-3.5 text-xs tracking-wide focus:border-[#D4AF37] focus:outline-none transition-colors duration-300 rounded-none placeholder:text-[#8c8c8c] font-sans"
+                    className="w-full bg-white/90 border border-[#D4AF37]/10 text-[#1A1A1A] px-4 py-3.5 text-xs tracking-wide focus:border-[#D4AF37] focus:outline-none transition-colors duration-300 rounded-none placeholder:text-[#8c8c8c] font-sans"
                   />
                 </div>
 
@@ -194,7 +194,7 @@ export default function VisitUs() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="e.g. +91 94141 85000"
-                    className="w-full bg-white/90 border border-[#D4AF37]/10 text-[#050505] px-4 py-3.5 text-xs tracking-wide focus:border-[#D4AF37] focus:outline-none transition-colors duration-300 rounded-none placeholder:text-[#8c8c8c] font-sans"
+                    className="w-full bg-white/90 border border-[#D4AF37]/10 text-[#1A1A1A] px-4 py-3.5 text-xs tracking-wide focus:border-[#D4AF37] focus:outline-none transition-colors duration-300 rounded-none placeholder:text-[#8c8c8c] font-sans"
                   />
                 </div>
               </div>
@@ -210,7 +210,7 @@ export default function VisitUs() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="e.g. guest@royalmail.com"
-                    className="w-full bg-white/90 border border-[#D4AF37]/10 text-[#050505] px-4 py-3.5 text-xs tracking-wide focus:border-[#D4AF37] focus:outline-none transition-colors duration-300 rounded-none placeholder:text-[#8c8c8c] font-sans"
+                    className="w-full bg-white/90 border border-[#D4AF37]/10 text-[#1A1A1A] px-4 py-3.5 text-xs tracking-wide focus:border-[#D4AF37] focus:outline-none transition-colors duration-300 rounded-none placeholder:text-[#8c8c8c] font-sans"
                   />
                 </div>
 
@@ -222,7 +222,7 @@ export default function VisitUs() {
                     name="serviceRequested"
                     value={formData.serviceRequested}
                     onChange={handleInputChange}
-                    className="w-full bg-white/90 border border-[#D4AF37]/10 text-[#050505] px-4 py-3.5 text-xs tracking-wide focus:border-[#D4AF37] focus:outline-none transition-colors duration-300 rounded-none font-sans"
+                    className="w-full bg-white/90 border border-[#D4AF37]/10 text-[#1A1A1A] px-4 py-3.5 text-xs tracking-wide focus:border-[#D4AF37] focus:outline-none transition-colors duration-300 rounded-none font-sans"
                   >
                     <option value="Bridal Kundan Sets">Bridal Kundan Sets</option>
                     <option value="Certified Solitaires">Certified Solitaires</option>
@@ -243,7 +243,7 @@ export default function VisitUs() {
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Specify carat configurations, historical replica requests, or your preferred visiting date..."
-                  className="w-full bg-white/90 border border-[#D4AF37]/10 text-[#050505] px-4 py-3.5 text-xs tracking-wide focus:border-[#D4AF37] focus:outline-none transition-colors duration-300 rounded-none placeholder:text-[#8c8c8c] font-sans resize-none"
+                  className="w-full bg-white/90 border border-[#D4AF37]/10 text-[#1A1A1A] px-4 py-3.5 text-xs tracking-wide focus:border-[#D4AF37] focus:outline-none transition-colors duration-300 rounded-none placeholder:text-[#8c8c8c] font-sans resize-none"
                 />
               </div>
 

@@ -50,7 +50,7 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#F2F0EF]/90 backdrop-blur-md"
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#FAF8F5]/90 backdrop-blur-md"
       >
         {/* Background Click to Close */}
         <div className="absolute inset-0 cursor-default" onClick={onClose} />
@@ -61,7 +61,7 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
           animate={{ scale: 1, y: 0 }}
           exit={{ scale: 0.94, y: 15 }}
           transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-          className="relative w-full max-w-4xl border border-[#D4AF37]/15 bg-[#F2F0EF] p-6 md:p-10 shadow-2xl overflow-y-auto max-h-[90vh]"
+          className="relative w-full max-w-4xl border border-[#D4AF37]/15 bg-[#FAF8F5] p-6 md:p-10 shadow-2xl overflow-y-auto max-h-[90vh]"
         >
           {/* Subtle gold framing corners */}
           <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-[#D4AF37]/40" />
@@ -72,7 +72,7 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
           {/* Close Trigger Button */}
           <button
             onClick={onClose}
-            className="absolute top-6 right-6 flex h-10 w-10 items-center justify-center border border-[#D4AF37]/10 bg-white/90 text-[#050505] hover:text-amber-400 hover:border-amber-400 transition-all duration-300 cursor-pointer"
+            className="absolute top-6 right-6 flex h-10 w-10 items-center justify-center border border-[#D4AF37]/10 bg-white/90 text-[#1A1A1A] hover:text-amber-400 hover:border-amber-400 transition-all duration-300 cursor-pointer"
             aria-label="Close details"
           >
             <X className="h-5 w-5" />
@@ -89,7 +89,7 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
                 className="h-full w-full object-cover object-center"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute bottom-3 left-3 bg-white/95 border border-amber-500/20 px-2.5 py-1 text-[8px] font-mono tracking-widest text-[#050505] uppercase">
+              <div className="absolute bottom-3 left-3 bg-white/95 border border-amber-500/20 px-2.5 py-1 text-[8px] font-mono tracking-widest text-[#1A1A1A] uppercase">
                 AUTHENTIC PORTRAITURE
               </div>
             </div>
@@ -100,12 +100,8 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
                 {/* Category Pill */}
                 <div className="flex items-center space-x-2 text-amber-400">
                   <Sparkles className="h-3.5 w-3.5 text-amber-500 animate-pulse" />
-                  <span className="text-[10px] uppercase tracking-[0.25em] font-mono text-[#6b7280]">
-                    {product.category} Exhibition • Ref ID {product.id.toUpperCase()}
-                  </span>
-                </div>
-
-                <h2 className="font-serif text-2xl md:text-3.5xl font-light text-[#050505] leading-tight">
+                  <span className="text-[10px] uppercase tracking-[0.25em] font-mono text-[#4A4A4A]">
+                <h2 className="font-serif text-2xl md:text-3.5xl font-light text-[#1A1A1A] leading-tight">
                   {product.name}
                 </h2>
 
@@ -120,7 +116,7 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
                   )}
                 </div>
 
-                <p className="font-serif italic text-[#5c5c5c] text-sm md:text-base leading-relaxed border-t border-[#D4AF37]/10 pt-4">
+                <p className="font-serif italic text-[#4A4A4A] text-sm md:text-base leading-relaxed border-t border-[#D4AF37]/10 pt-4">
                   {product.description}
                 </p>
               </div>
@@ -128,18 +124,18 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
               {/* Specific Tech Specs list */}
               <div className="grid grid-cols-2 gap-4 border-t border-b border-[#D4AF37]/10 py-5">
                 <div className="space-y-1">
-                  <span className="text-[9px] uppercase tracking-wider text-[#5c5c5c] font-sans block">Metal Purity Certification</span>
+                  <span className="text-[9px] uppercase tracking-wider text-[#4A4A4A] font-sans block">Metal Purity Certification</span>
                   <div className="flex items-center space-x-1">
-                    <span className="font-serif text-sm font-semibold text-[#050505]">{product.purity}</span>
+                    <span className="font-serif text-sm font-semibold text-[#1A1A1A]">{product.purity}</span>
                   </div>
                 </div>
 
                 {product.weight && (
                   <div className="space-y-1">
-                    <span className="text-[9px] uppercase tracking-wider text-[#6b7280] font-sans block">Net Weight Metric</span>
+                    <span className="text-[9px] uppercase tracking-wider text-[#4A4A4A] font-sans block">Net Weight Metric</span>
                     <div className="flex items-center space-x-1">
                       <Scale className="h-3.5 w-3.5 text-amber-500" />
-                      <span className="font-serif text-sm font-semibold text-[#050505]">{product.weight}</span>
+                      <span className="font-serif text-sm font-semibold text-[#1A1A1A]">{product.weight}</span>
                     </div>
                   </div>
                 )}
@@ -149,8 +145,8 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
               <div className="flex items-start space-x-3 bg-white/95 p-4 border border-[#D4AF37]/10 rounded-sm">
                 <Info className="h-4.5 w-4.5 text-amber-500 flex-shrink-0 mt-0.5" />
                 <div className="space-y-1">
-                  <h4 className="text-[10px] font-sans font-bold text-[#050505] tracking-widest uppercase">CATALOG FOR PRE-VIEWING ONLY</h4>
-                  <p className="text-[11px] font-sans text-[#5c5c5c] leading-normal">
+                  <h4 className="text-[10px] font-sans font-bold text-[#1A1A1A] tracking-widest uppercase">CATALOG FOR PRE-VIEWING ONLY</h4>
+                  <p className="text-[11px] font-sans text-[#4A4A4A] leading-normal">
                     This ornament resides in closed vault showcases at our flagship retail spot in Rawatbhata, Rajasthan. Immediate billing is completed exclusively on-site or during private digital consultations.
                   </p>
                 </div>
@@ -168,7 +164,7 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
 
                 <button
                   onClick={handleTelephoneCall}
-                  className="flex-1 flex items-center justify-center space-x-2 border border-[#D4AF37]/10 bg-white/90 text-[#050505] hover:border-[#D4AF37] hover:bg-[#F7F4F1] hover:text-[#050505] font-medium text-xs py-4 px-6 uppercase tracking-widest transition-all duration-300 cursor-pointer"
+                  className="flex-1 flex items-center justify-center space-x-2 border border-[#D4AF37]/10 bg-white/90 text-[#1A1A1A] hover:border-[#D4AF37] hover:bg-[#F0EDE8] hover:text-[#1A1A1A] font-medium text-xs py-4 px-6 uppercase tracking-widest transition-all duration-300 cursor-pointer"
                 >
                   <Phone className="h-4 w-4 text-amber-500" />
                   <span>Call Boutique Desk</span>
@@ -176,7 +172,7 @@ export default function ProductDetailModal({ product, onClose }: ProductDetailMo
               </div>
 
               {/* Footer specs */}
-              <div className="flex items-center justify-between text-[10px] text-[#5c5c5c] font-sans pt-1">
+              <div className="flex items-center justify-between text-[10px] text-[#4A4A4A] font-sans pt-1">
                 <span className="flex items-center">
                   <MapPin className="h-3 w-3 text-amber-500 mr-1" /> Rawatbhata Showroom Branch
                 </span>

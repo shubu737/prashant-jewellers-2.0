@@ -40,7 +40,7 @@ export default function Featured({ onSelectProduct }: FeaturedProps) {
   return (
     <section
       id="featured"
-      className="relative overflow-hidden bg-[#F2F0EF] py-24 px-4 sm:px-6 lg:px-8 border-b border-[#D4AF37]/10"
+      className="relative overflow-hidden bg-[#FAF8F5] py-24 px-4 sm:px-6 lg:px-8 border-b border-[#D4AF37]/10"
     >
       {/* Editorial Aesthetic: Thin gold outer ambient frames */}
       <div className="absolute inset-x-8 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/20 to-transparent" />
@@ -52,10 +52,10 @@ export default function Featured({ onSelectProduct }: FeaturedProps) {
               <span className="h-px w-8 bg-[#D4AF37]" />
               <span className="font-mono text-[10px] tracking-[0.4em] uppercase font-semibold">EXCLUSIVE EXHIBITION</span>
             </div>
-            <h2 className="font-serif text-3.5xl font-light tracking-wide text-[#050505] sm:text-5xl">
+            <h2 className="font-serif text-3.5xl font-light tracking-wide text-[#1A1A1A] sm:text-5xl">
               The <span className="font-serif font-bold italic text-[#D4AF37]">Signature</span> Showpieces
             </h2>
-            <p className="font-sans text-xs uppercase tracking-widest text-[#5c5c5c]">
+            <p className="font-sans text-xs uppercase tracking-widest text-[#4A4A4A]">
               Hand-picked masterpieces of high-end Rajasthani & Contemporary jewelry.
             </p>
           </div>
@@ -63,14 +63,14 @@ export default function Featured({ onSelectProduct }: FeaturedProps) {
           <div className="flex items-center space-x-2">
             <button
               onClick={handlePrev}
-              className="flex h-12 w-12 items-center justify-center rounded-none border border-[#D4AF37]/20 bg-white/90 text-[#050505] hover:border-[#D4AF37]/30 hover:text-[#050505] transition-all duration-300 cursor-pointer"
+              className="flex h-12 w-12 items-center justify-center rounded-none border border-[#D4AF37]/20 bg-white/90 text-[#1A1A1A] hover:border-[#D4AF37]/30 hover:text-[#1A1A1A] transition-all duration-300 cursor-pointer"
               aria-label="Previous Featured Product"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               onClick={handleNext}
-              className="flex h-12 w-12 items-center justify-center rounded-none border border-[#D4AF37]/20 bg-white/90 text-[#050505] hover:border-[#D4AF37]/30 hover:text-[#050505] transition-all duration-300 cursor-pointer"
+              className="flex h-12 w-12 items-center justify-center rounded-none border border-[#D4AF37]/20 bg-white/90 text-[#1A1A1A] hover:border-[#D4AF37]/30 hover:text-[#1A1A1A] transition-all duration-300 cursor-pointer"
               aria-label="Next Featured Product"
             >
               <ChevronRight className="h-5 w-5" />
@@ -79,7 +79,7 @@ export default function Featured({ onSelectProduct }: FeaturedProps) {
         </div>
 
         {/* Layout Carousel Block */}
-        <div className="relative border border-[#D4AF37]/15 bg-[#F7F4F1] p-6 md:p-12 transition-all duration-500">
+        <div className="relative border border-[#D4AF37]/15 bg-[#F0EDE8] p-6 md:p-12 transition-all duration-500">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 items-center">
             
             {/* Visual stage: Left Column */}
@@ -102,14 +102,14 @@ export default function Featured({ onSelectProduct }: FeaturedProps) {
               </AnimatePresence>
 
               {/* Spotlight corner details */}
-              <div className="absolute bottom-4 left-4 z-20 flex items-center space-x-2 border border-[#D4AF37]/30 bg-[#050505]/8 px-3 py-1 rounded-sm">
+              <div className="absolute bottom-4 left-4 z-20 flex items-center space-x-2 border border-[#D4AF37]/30 bg-[#1A1A1A]/8 px-3 py-1 rounded-sm">
                 <Sparkles className="h-3 w-3 text-[#D4AF37] animate-pulse" />
                 <span className="text-[9px] font-mono tracking-widest text-[#D4AF37] uppercase">RAWATBHATA SPOTLIGHT</span>
               </div>
             </div>
 
             {/* Narrative specs: Right Column */}
-            <div className="lg:col-span-6 flex flex-col justify-between h-full space-y-6 text-[#050505]">
+            <div className="lg:col-span-6 flex flex-col justify-between h-full space-y-6 text-[#1A1A1A]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeItem?.id}
@@ -124,28 +124,28 @@ export default function Featured({ onSelectProduct }: FeaturedProps) {
                       Category: {activeItem?.category}
                     </span>
                     <span className="h-1 w-1 rounded-full bg-[#D4AF37]" />
-                    <span className="text-xs font-mono tracking-[0.25em] text-zinc-400">
+                    <span className="text-xs font-mono tracking-[0.25em] text-[#4A4A4A]">
                       Purity Check {activeItem?.purity.includes('91.6') ? '• 22K (916)' : '• Premium'}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-3xl md:text-4.5xl font-light text-[#050505] leading-tight">
+                  <h3 className="font-serif text-3xl md:text-4.5xl font-light text-[#1A1A1A] leading-tight">
                     {activeItem?.name}
                   </h3>
 
-                  <p className="font-serif italic text-[#5c5c5c] text-sm md:text-base leading-relaxed">
+                  <p className="font-serif italic text-[#4A4A4A] text-sm md:text-base leading-relaxed">
                     {activeItem?.description}
                   </p>
 
                   {/* Details Specs Box */}
                   <div className="grid grid-cols-2 gap-4 border-t border-b border-[#D4AF37]/10 py-6">
                     <div className="space-y-1">
-                      <span className="text-[10px] uppercase tracking-wider text-[#5c5c5c] font-sans block">Metal Details</span>
+                      <span className="text-[10px] uppercase tracking-wider text-[#5A5A5A] font-sans block">Metal Details</span>
                       <span className="font-serif text-sm font-semibold text-[#D4AF37]">{activeItem?.purity}</span>
                     </div>
                     {activeItem?.weight && (
                       <div className="space-y-1">
-                        <span className="text-[10px] uppercase tracking-wider text-[#5c5c5c] font-sans block">Total Net Weight</span>
+                        <span className="text-[10px] uppercase tracking-wider text-[#4A4A4A] font-sans block">Total Net Weight</span>
                         <span className="font-serif text-sm font-semibold text-[#D4AF37]">{activeItem?.weight}</span>
                       </div>
                     )}
@@ -154,7 +154,7 @@ export default function Featured({ onSelectProduct }: FeaturedProps) {
                   {/* Visual non-purchasable badge */}
                   <div className="flex items-center space-x-2 border border-[#D4AF37]/15 bg-[#F7F3EE] p-3 rounded-none">
                     <Info className="h-4 w-4 text-[#D4AF37] flex-shrink-0" />
-                    <p className="text-[11px] font-sans text-[#5c5c5c] leading-normal">
+                    <p className="text-[11px] font-sans text-[#4A4A4A] leading-normal">
                       This signature item is exclusively presented for royal exhibitions and private store previews. No direct checkout available. Custom orders accept personal configuration.
                     </p>
                   </div>
@@ -174,7 +174,7 @@ export default function Featured({ onSelectProduct }: FeaturedProps) {
 
                 <button
                   onClick={() => onSelectProduct(activeItem)}
-                  className="flex-1 border border-[#D4AF37]/10 bg-white/90 text-[#050505] hover:border-[#D4AF37]/20 hover:bg-[#F7F4F1] hover:text-[#050505] font-medium text-xs py-4 px-6 uppercase tracking-widest transition-all duration-300 cursor-pointer"
+                  className="flex-1 border border-[#D4AF37]/10 bg-white/90 text-[#1A1A1A] hover:border-[#D4AF37]/20 hover:bg-[#F0EDE8] hover:text-[#1A1A1A] font-medium text-xs py-4 px-6 uppercase tracking-widest transition-all duration-300 cursor-pointer"
                 >
                   Detailed Specification
                 </button>

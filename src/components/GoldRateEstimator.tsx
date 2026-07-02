@@ -104,7 +104,7 @@ I would like to discuss customized design specifications and verify current live
   return (
     <section 
       id="rate-calculator" 
-      className="relative overflow-hidden bg-[#F2F0EF] py-24 px-4 sm:px-6 lg:px-8 border-b border-[#D4AF37]/10"
+      className="relative overflow-hidden bg-[#FAF8F5] py-24 px-4 sm:px-6 lg:px-8 border-b border-[#D4AF37]/10"
     >
       {/* Golden dust gradient background reflections */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[550px] w-[550px] rounded-full bg-amber-500/[0.04] blur-[140px] pointer-events-none" />
@@ -118,10 +118,10 @@ I would like to discuss customized design specifications and verify current live
             <span className="font-mono text-[10px] tracking-[0.4em] uppercase font-semibold">ESTIMATE PORTAL</span>
             <span className="h-px w-6 bg-[#D4AF37]" />
           </div>
-          <h2 className="font-serif text-3.5xl font-light tracking-wide text-[#050505] sm:text-5xl">
+          <h2 className="font-serif text-3.5xl font-light tracking-wide text-[#1A1A1A] sm:text-5xl">
             Live Hallmark <span className="font-serif font-bold italic text-[#D4AF37]">Rate & Estimation Desk</span>
           </h2>
-          <p className="font-sans text-xs uppercase tracking-widest text-[#5c5c5c] max-w-xl mx-auto leading-relaxed">
+          <p className="font-sans text-xs uppercase tracking-widest text-[#4A4A4A] max-w-xl mx-auto leading-relaxed">
             Obtain immediate transparent calculations based on authentic Rajasthani making parameters, hallmarking standards, and current live market factors.
           </p>
         </div>
@@ -130,7 +130,7 @@ I would like to discuss customized design specifications and verify current live
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
           
           {/* Left Column (SPAN 7): Configurator Form */}
-          <div className="lg:col-span-7 flex flex-col justify-between border border-[#D4AF37]/10 bg-[#F7F4F1] p-8 sm:p-10 relative">
+          <div className="lg:col-span-7 flex flex-col justify-between border border-[#D4AF37]/10 bg-[#F0EDE8] p-8 sm:p-10 relative">
             
             {/* Ambient luxury corners */}
             <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#D4AF37]/15" />
@@ -145,11 +145,11 @@ I would like to discuss customized design specifications and verify current live
                     <TrendingUp className="h-4 w-4 shrink-0 animate-pulse" />
                     <span className="font-sans text-[10px] uppercase tracking-wider font-semibold">Live Market Coefficients Active</span>
                   </div>
-                  <p className="font-sans text-[10px] text-[#5c5c5c]">Validated with BIS standard gold rates in Rajasthan</p>
+                  <p className="font-sans text-[10px] text-[#4A4A4A]">Validated with BIS standard gold rates in Rajasthan</p>
                 </div>
 
-                <div className="flex items-center space-x-3 bg-white/95 border border-[#D4AF37]/10 px-3.5 py-1.5 rounded-none font-mono text-[10px] text-[#5c5c5c]">
-                  <span className="text-[#5c5c5c]">Updated:</span>
+                <div className="flex items-center space-x-3 bg-white/95 border border-[#D4AF37]/10 px-3.5 py-1.5 rounded-none font-mono text-[10px] text-[#4A4A4A]">
+                  <span className="text-[#4A4A4A]">Updated:</span>
                   <span className="font-semibold text-[#D4AF37]">{lastUpdated}</span>
                   <button 
                     onClick={handleRefresh}
@@ -172,8 +172,8 @@ I would like to discuss customized design specifications and verify current live
                     onClick={() => { setMetal('gold'); playLuxuryChime(); }}
                     className={`py-3.5 text-center text-xs uppercase font-semibold font-sans tracking-widest border transition-all duration-300 cursor-pointer ${
                       metal === 'gold'
-                        ? 'border-[#D4AF37] text-[#050505] bg-[#D4AF37]/10 shadow-[0_0_15px_rgba(212,175,55,0.08)]'
-                        : 'border-[#D4AF37]/10 text-[#5c5c5c] hover:text-[#050505] bg-white/90'
+                        ? 'border-[#D4AF37] text-[#1A1A1A] bg-[#D4AF37]/10 shadow-[0_0_15px_rgba(212,175,55,0.08)]'
+                        : 'border-[#D4AF37]/10 text-[#5A5A5A] hover:text-[#1A1A1A] bg-white/90'
                     }`}
                   >
                     ✨ Hallmark Gold
@@ -182,8 +182,8 @@ I would like to discuss customized design specifications and verify current live
                     onClick={() => { setMetal('silver'); playLuxuryChime(); }}
                     className={`py-3.5 text-center text-xs uppercase font-semibold font-sans tracking-widest border transition-all duration-300 cursor-pointer ${
                       metal === 'silver'
-                        ? 'border-[#D4AF37] text-[#050505] bg-[#D4AF37]/10 shadow-[0_0_15px_rgba(212,175,55,0.08)]'
-                        : 'border-[#D4AF37]/10 text-[#5c5c5c] hover:text-[#050505] bg-white/90'
+                        ? 'border-[#D4AF37] text-[#1A1A1A] bg-[#D4AF37]/10 shadow-[0_0_15px_rgba(212,175,55,0.08)]'
+                        : 'border-[#D4AF37]/10 text-[#5A5A5A] hover:text-[#1A1A1A] bg-white/90'
                     }`}
                   >
                     💎 Fine Silver
@@ -205,7 +205,7 @@ I would like to discuss customized design specifications and verify current live
                         className={`px-4 py-2 text-[10px] font-mono tracking-wider transition-all cursor-pointer ${
                           purity === grade
                             ? 'bg-[#D4AF37] text-black font-bold'
-                            : 'bg-white/90 text-[#050505] hover:text-[#050505] border border-[#D4AF37]/10'
+                            : 'bg-white/90 text-[#1A1A1A] hover:text-[#1A1A1A] border border-[#D4AF37]/10'
                         }`}
                       >
                         {grade} ({grade === '24K' ? '99.9%' : grade === '22K' ? '91.6%' : grade === '18K' ? '75.0%' : '58.5%'})
@@ -218,8 +218,8 @@ I would like to discuss customized design specifications and verify current live
                         onClick={() => { setPurity(grade); playLuxuryChime(); }}
                         className={`px-4 py-2 text-[10px] font-mono tracking-wider transition-all cursor-pointer ${
                           purity === grade
-                            ? 'bg-white/90 text-[#050505] font-bold border border-[#D4AF37]/10'
-                            : 'bg-white/90 text-[#5c5c5c] hover:text-[#050505] border border-[#D4AF37]/10'
+                            ? 'bg-white/90 text-[#1A1A1A] font-bold border border-[#D4AF37]/10'
+                            : 'bg-white/90 text-[#5A5A5A] hover:text-[#1A1A1A] border border-[#D4AF37]/10'
                         }`}
                       >
                         {grade}
@@ -235,8 +235,8 @@ I would like to discuss customized design specifications and verify current live
                   <span className="text-[9px] uppercase tracking-widest text-[#6b7280] font-semibold">
                     Set Metal Net Weight
                   </span>
-                  <span className="text-[#5c5c5c] font-mono text-sm">
-                    <strong className="text-[#050505] text-base font-bold bg-white/90 px-3 py-1 border border-[#D4AF37]/10 font-sans mr-1">{weight}</strong> grams
+                  <span className="text-[#5A5A5A] font-mono text-sm">
+                    <strong className="text-[#1A1A1A] text-base font-bold bg-white/90 px-3 py-1 border border-[#D4AF37]/10 font-sans mr-1">{weight}</strong> grams
                   </span>
                 </div>
 
@@ -280,7 +280,7 @@ I would like to discuss customized design specifications and verify current live
                         : 'border-[#D4AF37]/10 bg-white/90 hover:border-[#D4AF37]/20'
                     }`}
                   >
-                    <span className="font-serif text-xs font-semibold text-[#050505]">Classic Nakshi</span>
+                    <span className="font-serif text-xs font-semibold text-[#1A1A1A]">Classic Nakshi</span>
                     <span className="font-sans text-[9px] text-[#6b7280] mt-0.5">Traditional Rajasthani filigree (10% fees)</span>
                   </button>
 
@@ -292,7 +292,7 @@ I would like to discuss customized design specifications and verify current live
                         : 'border-[#D4AF37]/10 bg-white/90 hover:border-[#D4AF37]/20'
                     }`}
                   >
-                    <span className="font-serif text-xs font-semibold text-[#050505]">Imperial Kundan</span>
+                    <span className="font-serif text-xs font-semibold text-[#1A1A1A]">Imperial Kundan</span>
                     <span className="font-sans text-[9px] text-[#6b7280] mt-0.5">Heavy bridal detailing & Polki (14% fees)</span>
                   </button>
 
@@ -304,7 +304,7 @@ I would like to discuss customized design specifications and verify current live
                         : 'border-[#D4AF37]/10 bg-white/90 hover:border-[#D4AF37]/20'
                     }`}
                   >
-                    <span className="font-serif text-xs font-semibold text-[#050505]">Minimal Sleek</span>
+                    <span className="font-serif text-xs font-semibold text-[#1A1A1A]">Minimal Sleek</span>
                     <span className="font-sans text-[9px] text-[#6b7280] mt-0.5">Rings & modern elegant bands (8% fees)</span>
                   </button>
                 </div>
@@ -315,7 +315,7 @@ I would like to discuss customized design specifications and verify current live
             {/* Bottom trust disclaimer notice */}
             <div className="mt-8 flex items-start space-x-2.5 border-t border-[#D4AF37]/10 pt-6">
               <ShieldCheck className="h-4.5 w-4.5 text-[#D4AF37] shrink-0 mt-0.5" />
-              <p className="text-[10px] font-sans text-[#5c5c5c] leading-normal">
+              <p className="text-[10px] font-sans text-[#5A5A5A] leading-normal">
                 Prashant Jewellers uses standard digital scales to live-record weights in client views. This estimator serves for direct comparison and guide valuations. Live showroom values may shift marginally depending on daily bullion market indexes in India.
               </p>
             </div>
@@ -333,7 +333,7 @@ I would like to discuss customized design specifications and verify current live
               
               <div className="flex items-center space-x-2.5 pb-4 border-b border-[#D4AF37]/10">
                 <FileText className="h-5 w-5 text-[#D4AF37]" />
-                <h3 className="font-serif text-lg tracking-wide text-[#050505]">
+                <h3 className="font-serif text-lg tracking-wide text-[#1A1A1A]">
                   Estimate <span className="italic font-bold text-[#D4AF37]">Memorandum</span>
                 </h3>
               </div>
@@ -342,17 +342,17 @@ I would like to discuss customized design specifications and verify current live
               <div className="space-y-4.5 text-xs font-mono">
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-[#5c5c5c]">Metal Class & Rate</span>
+                  <span className="text-[#5A5A5A]">Metal Class & Rate</span>
                   <span className="text-[#6b7280] font-semibold">{purity} {metal === 'gold' ? 'Gold' : 'Silver'}</span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-[#5c5c5c]">Rate per gram</span>
+                  <span className="text-[#5A5A5A]">Rate per gram</span>
                   <span className="text-[#6b7280]">₹{perGramRate.toLocaleString('en-IN')}/g</span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-[#5c5c5c]">Weight set</span>
+                  <span className="text-[#5A5A5A]">Weight set</span>
                   <span className="text-[#6b7280] font-semibold">{weight} grams</span>
                 </div>
 
@@ -360,32 +360,32 @@ I would like to discuss customized design specifications and verify current live
 <div className="border-t border-dashed border-[#D4AF37]/10 pt-4 space-y-3">
                   
                   <div className="flex items-center justify-between">
-                    <span className="text-[#5c5c5c]">Metal Melt Value</span>
-                    <span className="text-[#050505] font-semibold">₹{Math.round(metalPrice).toLocaleString('en-IN')}</span>
+                    <span className="text-[#5A5A5A]">Metal Melt Value</span>
+                    <span className="text-[#1A1A1A] font-semibold">₹{Math.round(metalPrice).toLocaleString('en-IN')}</span>
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-[#5c5c5c]">Making charges ({makingChargePercent}%)</span>
-                    <span className="text-[#050505]">₹{Math.round(makingCharges).toLocaleString('en-IN')}</span>
+                    <span className="text-[#5A5A5A]">Making charges ({makingChargePercent}%)</span>
+                    <span className="text-[#1A1A1A]">₹{Math.round(makingCharges).toLocaleString('en-IN')}</span>
                   </div>
 
                   {metal === 'gold' && (
                     <div className="flex items-center justify-between">
-                      <span className="text-[#5c5c5c] flex items-center gap-1.5">
+                      <span className="text-[#5A5A5A] flex items-center gap-1.5">
                         BIS Hallmarking Fee
                       </span>
-                      <span className="text-[#050505]">₹{hallmarkCharge}</span>
+                      <span className="text-[#1A1A1A]">₹{hallmarkCharge}</span>
                     </div>
                   )}
 
                   <div className="flex items-center justify-between pt-1 border-t border-[#D4AF37]/10">
-                    <span className="text-[#5c5c5c]">Taxable Subtotal</span>
+                    <span className="text-[#5A5A5A]">Taxable Subtotal</span>
                     <span className="text-[#D4AF37] font-sans font-bold">₹{Math.round(subtotal).toLocaleString('en-IN')}</span>
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-[#5c5c5c]">Govt GST (3.0%)</span>
-                    <span className="text-[#050505]">₹{Math.round(taxGST).toLocaleString('en-IN')}</span>
+                    <span className="text-[#5A5A5A]">Govt GST (3.0%)</span>
+                    <span className="text-[#1A1A1A]">₹{Math.round(taxGST).toLocaleString('en-IN')}</span>
                   </div>
 
                 </div>
@@ -394,13 +394,13 @@ I would like to discuss customized design specifications and verify current live
 
               {/* Large Grand Total Box */}
               <div className="border border-[#D4AF37]/10 bg-white/95 p-5 rounded-none text-center space-y-1 mt-6">
-                <span className="text-[9px] uppercase tracking-widest text-[#5c5c5c] block font-sans">
+                <span className="text-[9px] uppercase tracking-widest text-[#5A5A5A] block font-sans">
                   Projected Hallmarked Valuation
                 </span>
                 <span className="font-sans text-2xl sm:text-3xl font-extrabold text-[#D4AF37] drop-shadow-[0_2px_8px_rgba(212,175,55,0.15)]">
                   ₹{Math.round(grandTotal).toLocaleString('en-IN')}*
                 </span>
-                <span className="text-[8px] font-sans text-[#5c5c5c] block">
+                <span className="text-[8px] font-sans text-[#5A5A5A] block">
                   *Inclusive of all taxes & certification certificates
                 </span>
               </div>

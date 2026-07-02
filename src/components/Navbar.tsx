@@ -52,7 +52,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
         id="luxury-navbar"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'border-b border-amber-500/20 bg-[#F2F0EF]/95 backdrop-blur-xl shadow-lg shadow-black/10 py-3'
+            ? 'border-b border-amber-500/20 bg-[#FAF8F5]/95 backdrop-blur-xl shadow-lg shadow-black/10 py-3'
             : 'border-b border-transparent bg-transparent py-5'
         }`}
       >
@@ -67,7 +67,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
                 <Logo size="sm" animate={true} />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif text-lg font-bold tracking-widest uppercase text-[#050505] hover:text-amber-300 transition-colors duration-300">
+                <span className="font-serif text-lg font-bold tracking-widest uppercase text-[#1A1A1A] hover:text-amber-300 transition-colors duration-300">
                   Prashant
                 </span>
                 <span className="text-[10px] tracking-[0.25em] uppercase text-amber-500 font-medium">
@@ -102,7 +102,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
               {/* Sound Toggle */}
               <button
                 onClick={toggleSound}
-                className="flex items-center justify-center h-9 px-3 rounded-sm border border-[#D4AF37]/15 bg-white/90 text-[#050505] hover:text-amber-400 hover:border-amber-500/30 transition-all duration-300 cursor-pointer"
+                className="flex items-center justify-center h-9 px-3 rounded-sm border border-[#D4AF37]/15 bg-white/90 text-[#1A1A1A] hover:text-amber-400 hover:border-amber-500/30 transition-all duration-300 cursor-pointer"
                 title={isSoundEnabled ? 'Signaling Golden Chimes ON' : 'Turn Golden Chimes ON'}
               >
                 {isSoundEnabled ? (
@@ -120,7 +120,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
 
               <button
                 onClick={() => handleItemClick('visit-us')}
-                className="relative overflow-hidden border border-amber-500/40 bg-white/90 px-5 py-2 text-xs uppercase tracking-widest text-[#050505] transition-all duration-300 hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-400 hover:text-black cursor-pointer shadow-[0_4px_12px_rgba(0,0,0,0.12)]"
+                className="relative overflow-hidden border border-amber-500/40 bg-white/90 px-5 py-2 text-xs uppercase tracking-widest text-[#1A1A1A] transition-all duration-300 hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-400 hover:text-black cursor-pointer shadow-[0_4px_12px_rgba(0,0,0,0.12)]"
               >
                 Request Quote
               </button>
@@ -130,13 +130,13 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
             <div className="flex items-center space-x-2.5 lg:hidden">
               <button
                 onClick={toggleSound}
-                className="flex items-center justify-center h-8 w-8 rounded-sm border border-[#D4AF37]/15 text-[#050505] hover:text-amber-400 cursor-pointer"
+                className="flex items-center justify-center h-8 w-8 rounded-sm border border-[#D4AF37]/15 text-[#1A1A1A] hover:text-amber-400 cursor-pointer"
               >
                 {isSoundEnabled ? <Volume2 className="h-3.5 w-3.5 text-amber-400" /> : <VolumeX className="h-3.5 w-3.5" />}
               </button>
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-[#050505] hover:text-amber-400 focus:outline-none cursor-pointer"
+                className="text-[#1A1A1A] hover:text-amber-400 focus:outline-none cursor-pointer"
                 aria-label="Toggle Menu"
               >
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -170,7 +170,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
                     key={item.id}
                     onClick={() => handleItemClick(item.id)}
                     className={`text-left font-sans text-xs uppercase tracking-widest py-2 border-b border-[#D4AF37]/10 transition-colors duration-200 hover:text-amber-400 ${
-                      activeSection === item.id ? 'text-amber-400 font-semibold' : 'text-[#5c5c5c]'
+                      activeSection === item.id ? 'text-amber-400 font-semibold' : 'text-[#5A5A5A]'
                     }`}
                   >
                     {item.label}
@@ -184,7 +184,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
                 >
                   Request Customized Quote
                 </button>
-                <div className="text-center text-[10px] tracking-wider text-[#5c5c5c] font-mono">
+                <div className="text-center text-[10px] tracking-wider text-[#5A5A5A] font-mono">
                   {STORE_INFO.phone} • Rawatbhata Showroom
                 </div>
               </div>
