@@ -67,7 +67,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
                 <Logo size="sm" animate={true} />
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold tracking-widest uppercase text-white hover:text-amber-400 transition-colors duration-300" style={{ fontFamily: '"Cinzel", serif' }}>
+                <span className="font-serif text-lg font-bold tracking-widest uppercase text-white hover:text-amber-400 transition-colors duration-300">
                   Prashant
                 </span>
                 <span className="text-[10px] tracking-[0.25em] uppercase text-amber-400 font-medium">
