@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -44,7 +44,7 @@ export default function Hero({ onExplore }: HeroProps) {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col justify-between overflow-hidden bg-[#FAF8F5] px-4 py-8 sm:px-6 lg:px-8"
+      className="relative flex min-h-screen flex-col justify-between overflow-hidden bg-[#211715] px-4 py-8 sm:px-6 lg:px-8"
     >
       {/* Absolute background video & image with deep luxury radial gradients */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
@@ -55,8 +55,8 @@ export default function Hero({ onExplore }: HeroProps) {
           referrerPolicy="no-referrer"
         />
         {/* Soft gold wash overlay */}
-        <div className="absolute inset-0" style={{ background: 'radial-gradient(circle, transparent, rgba(250,248,245,0.95), #FAF8F5)' }} />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/85 to-[#FAF8F5]/70" />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(circle, transparent, rgba(33,23,21,0.95), #FAF8F5)' }} />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#211715] via-[#211715]/85 to-[#211715]/70" />
       </div>
 
       {/* Gold spotlight overlay reflection */}
@@ -94,13 +94,13 @@ export default function Hero({ onExplore }: HeroProps) {
 
           {/* Substantial luxury heading */}
           <motion.div variants={itemVariants} className="space-y-3 sm:space-y-4">
-            <h1 className="font-serif text-4xl font-light tracking-[0.16em] text-[#1A1A1A] sm:text-6xl md:text-7.5xl leading-none">
+            <h1 className="font-serif text-4xl font-light tracking-[0.16em] text-white sm:text-6xl md:text-7.5xl leading-none">
               PRASHANT <br />
               <span className="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 bg-clip-text font-serif font-semibold tracking-[0.18em] text-transparent drop-shadow-[0_2px_10px_rgba(212,175,55,0.3)]">
                 JEWELLERS
               </span>
             </h1>
-            <p className="mx-auto max-w-xl font-sans text-xs uppercase tracking-[0.35em] text-[#4A4A4A] md:text-sm">
+            <p className="mx-auto max-w-xl font-sans text-xs uppercase tracking-[0.35em] text-gray-300 md:text-sm">
               “{STORE_INFO.tagline}”
             </p>
           </motion.div>
@@ -108,7 +108,7 @@ export default function Hero({ onExplore }: HeroProps) {
           {/* Fine description statement */}
           <motion.p
             variants={itemVariants}
-            className="mx-auto max-w-2xl font-serif text-sm leading-relaxed text-[#4A4A4A] md:text-lg italic px-4"
+            className="mx-auto max-w-2xl font-serif text-sm leading-relaxed text-gray-300 md:text-lg italic px-4"
           >
             Rawatbhata’s legacy of purity meets timeless craftsmanship. Discover hand-sculpted bridal sets, radiant diamond rings, and pure gold jewellery—crafted to be cherished for generations.
           </motion.p>
@@ -132,7 +132,7 @@ export default function Hero({ onExplore }: HeroProps) {
 
             <button
               onClick={() => handleCtaClick('visit-us')}
-              className="flex w-56 items-center justify-center space-x-2.5 rounded-sm border border-[#D4AF37]/20 bg-white/90 px-8 py-4.5 font-sans text-xs font-medium uppercase tracking-widest text-[#1A1A1A] transition-all duration-300 hover:border-amber-400 hover:text-black cursor-pointer shadow-[0_4px_25px_rgba(0,0,0,0.1)] hover:shadow-[0_0_15px_rgba(245,158,11,0.12)]"
+              className="flex w-56 items-center justify-center space-x-2.5 rounded-sm border border-[#D4AF37]/20 bg-white/90 px-8 py-4.5 font-sans text-xs font-medium uppercase tracking-widest text-white transition-all duration-300 hover:border-amber-400 hover:text-black cursor-pointer shadow-[0_4px_25px_rgba(0,0,0,0.1)] hover:shadow-[0_0_15px_rgba(245,158,11,0.12)]"
             >
               <MapPin className="h-4 w-4 text-amber-500" />
               <span>Visit Showroom</span>
@@ -147,17 +147,17 @@ export default function Hero({ onExplore }: HeroProps) {
         <div className="flex items-center justify-center gap-6 px-4 flex-wrap md:gap-12">
           <div className="flex flex-col items-center">
             <span className="font-serif text-xl md:text-2xl font-light text-amber-600">100%</span>
-            <span className="text-[9px] tracking-widest uppercase text-[#4A4A4A]">BIS Hallmarked Gold</span>
+            <span className="text-[9px] tracking-widest uppercase text-gray-300">BIS Hallmarked Gold</span>
           </div>
           <div className="hidden md:block h-8 w-[1px] bg-amber-500/25" />
           <div className="flex flex-col items-center">
             <span className="font-serif text-xl md:text-2xl font-light text-amber-600">Since 1957</span>
-            <span className="text-[9px] tracking-widest uppercase text-[#4A4A4A]">Royal Legacy</span>
+            <span className="text-[9px] tracking-widest uppercase text-gray-300">Royal Legacy</span>
           </div>
           <div className="hidden md:block h-8 w-[1px] bg-amber-500/25" />
           <div className="flex flex-col items-center">
             <span className="font-serif text-xl md:text-2xl font-light text-amber-600">Bespoke</span>
-            <span className="text-[9px] tracking-widest uppercase text-[#4A4A4A]">Custom Rajasthan Crafts</span>
+            <span className="text-[9px] tracking-widest uppercase text-gray-300">Custom Rajasthan Crafts</span>
           </div>
         </div>
 
@@ -169,7 +169,7 @@ export default function Hero({ onExplore }: HeroProps) {
             className="flex flex-col items-center cursor-pointer"
             onClick={() => handleCtaClick('about')}
           >
-            <span className="text-[9px] tracking-[0.2em] uppercase text-[#4A4A4A] mb-2 font-mono">SCROLL TO DISCOVER</span>
+            <span className="text-[9px] tracking-[0.2em] uppercase text-gray-300 mb-2 font-mono">SCROLL TO DISCOVER</span>
             <div className="flex h-8 w-[18px] justify-center rounded-full border border-[#D4AF37]/50 p-1">
               <div className="h-2 w-1 rounded-full bg-amber-400" />
             </div>
