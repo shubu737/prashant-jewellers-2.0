@@ -31,11 +31,10 @@ export default function Logo({
 
   const { w, h } = dimensions[size];
 
-  // Render the client's uploaded raster logo from `public/logo.png` as primary.
-  // Add a version query string to force fresh browser reload when updating the asset.
+  // Render the client's uploaded raster logo from `public/logo-v2.png` as primary.
   return (
     <motion.img
-      src="/logo.png?v=2"
+      src="/logo-v2.png"
       alt="Prashant Jewellers Logo"
       width={w}
       height={h}
