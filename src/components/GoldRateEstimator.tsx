@@ -52,15 +52,18 @@ export default function GoldRateEstimator() {
   const fetchRates = async () => {
     try {
       // gold-api.com — free, no key, returns price in USD per troy oz
-      const [goldRes, silverRes] = await Promise.all([
+      // frankfurter.app — free, no key, live forex rates
+      const [goldRes, silverRes, fxRes] = await Promise.all([
         fetch('https://api.gold-api.com/price/XAU'),
         fetch('https://api.gold-api.com/price/XAG'),
+        fetch('https://api.frankfurter.app/latest?from=USD&to=INR'),
       ]);
       const goldData = await goldRes.json();
       const silverData = await silverRes.json();
+      const fxData = await fxRes.json();
 
-      // USD/INR approximate live conversion (fallback 84)
-      const usdInr = 84;
+      // Live USD/INR rate, fallback to 84 if unavailable
+      const usdInr: number = fxData?.rates?.INR ?? 84;
 
       const newGold = parseFloat(((goldData.price / OZ_TO_GRAM) * usdInr).toFixed(2));
       const newSilver = parseFloat(((silverData.price / OZ_TO_GRAM) * usdInr).toFixed(2));
