@@ -28,7 +28,7 @@ const founders = [
     fallback: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
     since: '1957',
     quote: 'With a passion for perfection and an eye for detail, the founder has dedicated years to creating jewellery that reflects both tradition and modern luxury.',
-    bio: 'At just 15 years old, Neelesh Soni stepped into the family jewellery business with a dream to create something extraordinary. Through years of perseverance, honesty, and exceptional craftsmanship, he elevated the business to new heights. Today, his legacy is built on trust, unmatched quality, and timeless designs that celebrate life\'s most precious moments.',
+    bio: 'At just 15 years old, Nilesh Soni stepped into the family jewellery business with a dream to create something extraordinary. Through years of perseverance, honesty, and exceptional craftsmanship, he elevated the business to new heights. Today, his legacy is built on trust, unmatched quality, and timeless designs that celebrate life\'s most precious moments.',
     credentials: [
       'Master craftsman with expertise in 22K & 18K gold jewellery',
       'Pioneer of BIS Hallmarked jewellery in Rawatbhata',
