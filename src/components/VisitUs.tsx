@@ -139,13 +139,14 @@ export default function VisitUs() {
                 src={STORE_INFO.mapsIframeUrl}
                 width="100%"
                 height="320"
-                style={{ border: 0, filter: 'grayscale(1) invert(0.92) contrast(1.15)' }}
+                style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-              <div className="absolute top-4 left-4 bg-white/90 border border-amber-500/30 text-[9px] uppercase tracking-widest text-[#1A1A1A] px-3 py-1 font-mono rounded-sm">
-                MAP LOCATION ACCREDITATION
+              <div className="absolute top-4 left-4 bg-white shadow-md text-[9px] uppercase tracking-widest px-3 py-1 font-mono rounded-sm flex items-center gap-1.5">
+                <span style={{color:'#4285F4'}}>G</span><span style={{color:'#EA4335'}}>o</span><span style={{color:'#FBBC05'}}>o</span><span style={{color:'#4285F4'}}>g</span><span style={{color:'#34A853'}}>l</span><span style={{color:'#EA4335'}}>e</span>
+                <span className="text-[#5A5A5A] ml-1">Maps</span>
               </div>
             </div>
 
