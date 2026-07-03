@@ -24,8 +24,13 @@ const SILVER_PURITY: Record<string, number> = {
 // Troy oz → gram
 const OZ_TO_GRAM = 31.1035;
 
-// Fallback rates (per gram, INR) used when API is unavailable
-const FALLBACK = { gold24K: 7450, silverFine: 92 };
+// India import duty on gold = 15%, IGST on import = 3%, local trade premium ~2%
+// Total multiplier over international spot to arrive at Indian retail base rate
+const INDIA_GOLD_PREMIUM = 1.20; // 20% over spot (duty 15% + GST 3% + ~2% premium)
+const INDIA_SILVER_PREMIUM = 1.12; // 12% over spot (duty 10% + GST 3% - 1% discount)
+
+// Fallback rates (per gram, INR) used when API is unavailable — Rajasthan market
+const FALLBACK = { gold24K: 9200, silverFine: 105 };
 
 export default function GoldRateEstimator() {
   const [metal, setMetal] = useState<'gold' | 'silver'>('gold');
@@ -65,8 +70,8 @@ export default function GoldRateEstimator() {
       // Live USD/INR rate, fallback to 84 if unavailable
       const usdInr: number = fxData?.rates?.INR ?? 84;
 
-      const newGold = parseFloat(((goldData.price / OZ_TO_GRAM) * usdInr).toFixed(2));
-      const newSilver = parseFloat(((silverData.price / OZ_TO_GRAM) * usdInr).toFixed(2));
+      const newGold = parseFloat(((goldData.price / OZ_TO_GRAM) * usdInr * INDIA_GOLD_PREMIUM).toFixed(2));
+      const newSilver = parseFloat(((silverData.price / OZ_TO_GRAM) * usdInr * INDIA_SILVER_PREMIUM).toFixed(2));
 
       setPrevGold(gold24KPerGram);
       setPrevSilver(silverFinePerGram);
@@ -188,7 +193,7 @@ I would like to discuss customized design specifications and verify current live
                       <span className="font-sans text-[10px] uppercase tracking-wider font-semibold">Live Market Rates Active</span>
                     </div>
                     <p className="font-sans text-[10px] text-[#4A4A4A]">
-                      {rateError ? '⚠ Using fallback rates — check connection' : 'Auto-refreshes every 60 seconds · Source: gold-api.com'}
+                      {rateError ? '⚠ Using fallback rates — check connection' : 'Rajasthan market rate · Import duty + GST applied · Auto-refreshes every 60s'}
                     </p>
                   </div>
                   <div className="flex items-center space-x-3 bg-white/95 border border-[#D4AF37]/10 px-3.5 py-1.5 rounded-none font-mono text-[10px] text-[#4A4A4A]">
