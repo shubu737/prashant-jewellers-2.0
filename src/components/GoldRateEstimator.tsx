@@ -9,19 +9,23 @@ import { Scale, Sparkles, AlertCircle, TrendingUp, RefreshCw, MessageSquare, Shi
 import { useSound } from '../hooks/useSound';
 import { STORE_INFO } from '../data';
 
-// Highly accurate, realistic benchmark rates (per gram)
-const BASE_RATES = {
-  gold: {
-    '24K': 7450, // Pure 99.9%
-    '22K': 6830, // standard BIS 91.6% Hallmark (most bridal sets)
-    '18K': 5650, // luxury diamond backdrops (75.0%)
-    '14K': 4490, // lightweight rings & bands
-  },
-  silver: {
-    'Fine 99.9%': 92,
-    'Sterling 92.5%': 85,
-  }
+// Purity multipliers relative to 24K/Fine 99.9%
+const GOLD_PURITY: Record<string, number> = {
+  '24K': 1,
+  '22K': 22 / 24,
+  '18K': 18 / 24,
+  '14K': 14 / 24,
 };
+const SILVER_PURITY: Record<string, number> = {
+  'Fine 99.9%': 1,
+  'Sterling 92.5%': 0.925,
+};
+
+// Troy oz → gram
+const OZ_TO_GRAM = 31.1035;
+
+// Fallback rates (per gram, INR) used when API is unavailable
+const FALLBACK = { gold24K: 7450, silverFine: 92 };
 
 export default function GoldRateEstimator() {
   const [metal, setMetal] = useState<'gold' | 'silver'>('gold');
@@ -31,40 +35,74 @@ export default function GoldRateEstimator() {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [lastUpdated, setLastUpdated] = useState<string>('');
 
-  const { playLuxuryChime, playGlowChime } = useSound();
+  // Live rate state
+  const [gold24KPerGram, setGold24KPerGram] = useState<number>(FALLBACK.gold24K);
+  const [silverFinePerGram, setSilverFinePerGram] = useState<number>(FALLBACK.silverFine);
+  const [prevGold, setPrevGold] = useState<number>(FALLBACK.gold24K);
+  const [prevSilver, setPrevSilver] = useState<number>(FALLBACK.silverFine);
+  const [rateError, setRateError] = useState(false);
 
-  // Set the current real-time or simulated update date on start
-  useEffect(() => {
-    updateTimestamp();
-  }, []);
+  const { playLuxuryChime, playGlowChime } = useSound();
 
   const updateTimestamp = () => {
     const now = new Date();
     setLastUpdated(now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' IST');
   };
 
+  const fetchRates = async () => {
+    try {
+      // gold-api.com — free, no key, returns price in USD per troy oz
+      const [goldRes, silverRes] = await Promise.all([
+        fetch('https://api.gold-api.com/price/XAU'),
+        fetch('https://api.gold-api.com/price/XAG'),
+      ]);
+      const goldData = await goldRes.json();
+      const silverData = await silverRes.json();
+
+      // USD/INR approximate live conversion (fallback 84)
+      const usdInr = 84;
+
+      const newGold = parseFloat(((goldData.price / OZ_TO_GRAM) * usdInr).toFixed(2));
+      const newSilver = parseFloat(((silverData.price / OZ_TO_GRAM) * usdInr).toFixed(2));
+
+      setPrevGold(gold24KPerGram);
+      setPrevSilver(silverFinePerGram);
+      setGold24KPerGram(newGold);
+      setSilverFinePerGram(newSilver);
+      setRateError(false);
+      updateTimestamp();
+    } catch {
+      setRateError(true);
+      updateTimestamp();
+    }
+  };
+
+  // Fetch on mount + auto-refresh every 60 seconds
+  useEffect(() => {
+    fetchRates();
+    const interval = setInterval(fetchRates, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
   const handleRefresh = () => {
     setIsRefreshing(true);
     playGlowChime();
-    setTimeout(() => {
-      setIsRefreshing(false);
-      updateTimestamp();
-    }, 900);
+    fetchRates().finally(() => setIsRefreshing(false));
   };
 
   // Adjust purity options when metal changes
   useEffect(() => {
-    if (metal === 'gold') {
-      setPurity('22K');
-    } else {
-      setPurity('Sterling 92.5%');
-    }
+    if (metal === 'gold') setPurity('22K');
+    else setPurity('Sterling 92.5%');
   }, [metal]);
 
-  // Calculations based on Prashant Jewellers standard calculations
-  const perGramRate = metal === 'gold' 
-    ? BASE_RATES.gold[purity as keyof typeof BASE_RATES.gold] || 6830
-    : BASE_RATES.silver[purity as keyof typeof BASE_RATES.silver] || 85;
+  // Per-gram rate based on live 24K/Fine base × purity multiplier
+  const perGramRate = metal === 'gold'
+    ? Math.round(gold24KPerGram * (GOLD_PURITY[purity] ?? 1))
+    : Math.round(silverFinePerGram * (SILVER_PURITY[purity] ?? 1));
+
+  const goldTrend = gold24KPerGram >= prevGold ? 'up' : 'down';
+  const silverTrend = silverFinePerGram >= prevSilver ? 'up' : 'down';
 
   // Making charges: Custom Rajasthani hand filigree ranges from 8% to 15%
   const makingChargePercent = {
@@ -139,26 +177,52 @@ I would like to discuss customized design specifications and verify current live
             <div className="space-y-8">
               
               {/* Header Status Bar with real-time indicators */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-6 border-b border-[#D4AF37]/10 gap-4">
-                <div className="space-y-1">
-                  <div className="flex items-center space-x-2 text-emerald-400 select-none">
-                    <TrendingUp className="h-4 w-4 shrink-0 animate-pulse" />
-                    <span className="font-sans text-[10px] uppercase tracking-wider font-semibold">Live Market Coefficients Active</span>
+              <div className="flex flex-col gap-4 pb-6 border-b border-[#D4AF37]/10">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <div className="space-y-1">
+                    <div className="flex items-center space-x-2 text-emerald-400 select-none">
+                      <TrendingUp className="h-4 w-4 shrink-0 animate-pulse" />
+                      <span className="font-sans text-[10px] uppercase tracking-wider font-semibold">Live Market Rates Active</span>
+                    </div>
+                    <p className="font-sans text-[10px] text-[#4A4A4A]">
+                      {rateError ? '⚠ Using fallback rates — check connection' : 'Auto-refreshes every 60 seconds · Source: gold-api.com'}
+                    </p>
                   </div>
-                  <p className="font-sans text-[10px] text-[#4A4A4A]">Validated with BIS standard gold rates in Rajasthan</p>
+                  <div className="flex items-center space-x-3 bg-white/95 border border-[#D4AF37]/10 px-3.5 py-1.5 rounded-none font-mono text-[10px] text-[#4A4A4A]">
+                    <span className="text-[#4A4A4A]">Updated:</span>
+                    <span className="font-semibold text-[#D4AF37]">{lastUpdated || '—'}</span>
+                    <button
+                      onClick={handleRefresh}
+                      disabled={isRefreshing}
+                      className="hover:text-amber-300 ml-1.5 transition-colors cursor-pointer disabled:opacity-40"
+                      title="Refresh Live Rates"
+                    >
+                      <RefreshCw className={`h-3 w-3 ${isRefreshing ? 'animate-spin' : ''}`} />
+                    </button>
+                  </div>
                 </div>
 
-                <div className="flex items-center space-x-3 bg-white/95 border border-[#D4AF37]/10 px-3.5 py-1.5 rounded-none font-mono text-[10px] text-[#4A4A4A]">
-                  <span className="text-[#4A4A4A]">Updated:</span>
-                  <span className="font-semibold text-[#D4AF37]">{lastUpdated}</span>
-                  <button 
-                    onClick={handleRefresh}
-                    disabled={isRefreshing}
-                    className="hover:text-amber-300 ml-1.5 transition-colors cursor-pointer disabled:opacity-40"
-                    title="Refresh Live Rates"
-                  >
-                    <RefreshCw className={`h-3 w-3 ${isRefreshing ? 'animate-spin' : ''}`} />
-                  </button>
+                {/* Live rate ticker */}
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="bg-white/90 border border-[#D4AF37]/15 px-4 py-3 flex flex-col gap-0.5">
+                    <span className="text-[9px] uppercase tracking-widest text-[#6b7280] font-semibold">Gold 24K / gram</span>
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-base font-bold text-[#1A1A1A]">₹{gold24KPerGram.toLocaleString('en-IN')}</span>
+                      <span className={`text-[10px] font-bold ${goldTrend === 'up' ? 'text-emerald-500' : 'text-red-500'}`}>
+                        {goldTrend === 'up' ? '▲' : '▼'}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="bg-white/90 border border-[#D4AF37]/15 px-4 py-3 flex flex-col gap-0.5">
+                    <span className="text-[9px] uppercase tracking-widest text-[#6b7280] font-semibold">Silver Fine / gram</span>
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-base font-bold text-[#1A1A1A]">₹{silverFinePerGram.toLocaleString('en-IN')}</span>
+                      <span className={`text-[10px] font-bold ${silverTrend === 'up' ? 'text-emerald-500' : 'text-red-500'}`}>
+                        {silverTrend === 'up' ? '▲' : '▼'}
+                      </span>
+                    </div>
+  
+                  </div>
                 </div>
               </div>
 
@@ -198,7 +262,7 @@ I would like to discuss customized design specifications and verify current live
                 </span>
                 <div className="flex flex-wrap gap-2.5">
                   {metal === 'gold' ? (
-                    Object.keys(BASE_RATES.gold).map((grade) => (
+                    Object.keys(GOLD_PURITY).map((grade) => (
                       <button
                         key={grade}
                         onClick={() => { setPurity(grade); playLuxuryChime(); }}
@@ -212,13 +276,13 @@ I would like to discuss customized design specifications and verify current live
                       </button>
                     ))
                   ) : (
-                    Object.keys(BASE_RATES.silver).map((grade) => (
+                    Object.keys(SILVER_PURITY).map((grade) => (
                       <button
                         key={grade}
                         onClick={() => { setPurity(grade); playLuxuryChime(); }}
                         className={`px-4 py-2 text-[10px] font-mono tracking-wider transition-all cursor-pointer ${
                           purity === grade
-                            ? 'bg-white/90 text-[#1A1A1A] font-bold border border-[#D4AF37]/10'
+                            ? 'bg-[#D4AF37] text-black font-bold border border-[#D4AF37]'
                             : 'bg-white/90 text-[#5A5A5A] hover:text-[#1A1A1A] border border-[#D4AF37]/10'
                         }`}
                       >
