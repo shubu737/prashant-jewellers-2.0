@@ -5,18 +5,21 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Eye, Star, X, Info, Phone, MessageSquare } from 'lucide-react';
-import { PRODUCTS, STORE_INFO } from '../data';
+import { Sparkles, Eye, Star, MessageSquare } from 'lucide-react';
+import { STORE_INFO } from '../data';
 import { Product } from '../types';
 import { useSound } from '../hooks/useSound';
 
 interface CollectionsProps {
+  products: Product[];
+  isLoading: boolean;
+  error: string | null;
   onQuickView: (product: Product) => void;
 }
 
-type TabType = 'all' | 'gold' | 'diamond' | 'bridal' | 'silver';
+type TabType = 'all' | 'gold' | 'diamond' | 'bridal' | 'silver' | 'ring' | 'necklace' | 'bracelet';
 
-export default function Collections({ onQuickView }: CollectionsProps) {
+export default function Collections({ products, isLoading, error, onQuickView }: CollectionsProps) {
   const [activeTab, setActiveTab] = useState<TabType>('all');
   const { playGlowChime, playLuxuryChime } = useSound();
 
@@ -25,12 +28,15 @@ export default function Collections({ onQuickView }: CollectionsProps) {
     { label: 'Kundan & Bridal', value: 'bridal' },
     { label: 'Royal Gold', value: 'gold' },
     { label: 'Flawless Diamonds', value: 'diamond' },
-    { label: 'Fine Silver', value: 'silver' }
+    { label: 'Fine Silver', value: 'silver' },
+    { label: 'Rings', value: 'ring' },
+    { label: 'Necklaces', value: 'necklace' },
+    { label: 'Bracelets', value: 'bracelet' }
   ];
 
   const filteredProducts = activeTab === 'all'
-    ? PRODUCTS
-    : PRODUCTS.filter(p => p.category === activeTab);
+    ? products
+    : products.filter(p => p.category === activeTab);
 
   const handleTabChange = (tab: TabType) => {
     setActiveTab(tab);
@@ -88,13 +94,23 @@ export default function Collections({ onQuickView }: CollectionsProps) {
           </div>
         </div>
 
-        {/* Product Cards Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProducts.map((product) => (
+        {isLoading ? (
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {[...Array(6)].map((_, idx) => (
+              <div key={idx} className="h-96 animate-pulse rounded-sm bg-[#F5F1EC]" />
+            ))}
+          </div>
+        ) : error ? (
+          <div className="rounded-sm border border-red-200 bg-red-50 p-6 text-sm text-red-700">
+            Unable to load products — please check your Sanity configuration.
+          </div>
+        ) : (
+          <motion.div
+            layout
+            className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredProducts.map((product) => (
               <motion.div
                 layout
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -165,9 +181,10 @@ export default function Collections({ onQuickView }: CollectionsProps) {
                   </div>
                 </div>
               </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        )}
 
       </div>
     </section>

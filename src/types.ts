@@ -3,10 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+export type ProductCategory = 'gold' | 'diamond' | 'bridal' | 'silver' | 'ring' | 'necklace' | 'bracelet';
+
 export interface Product {
   id: string;
   name: string;
-  category: 'gold' | 'diamond' | 'bridal' | 'silver';
+  category: ProductCategory;
   price: string;
   originalPrice?: string;
   image: string;

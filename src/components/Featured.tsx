@@ -5,19 +5,21 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, ChevronLeft, ChevronRight, MessageSquare, Info, Phone } from 'lucide-react';
-import { PRODUCTS, STORE_INFO } from '../data';
+import { Sparkles, ChevronLeft, ChevronRight, MessageSquare, Info } from 'lucide-react';
+import { STORE_INFO } from '../data';
+import { Product } from '../types';
 import { useSound } from '../hooks/useSound';
 
 interface FeaturedProps {
-  onSelectProduct: (product: any) => void;
+  products: Product[];
+  onSelectProduct: (product: Product) => void;
 }
 
-export default function Featured({ onSelectProduct }: FeaturedProps) {
+export default function Featured({ products, onSelectProduct }: FeaturedProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { playGlowChime, playLuxuryChime } = useSound();
 
-  const featuredItems = PRODUCTS.filter(p => p.isFeatured);
+  const featuredItems = products?.filter((p) => p.isFeatured) ?? [];
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? featuredItems.length - 1 : prev - 1));

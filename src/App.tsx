@@ -24,10 +24,12 @@ import VisitUs from './components/VisitUs';
 import Footer from './components/Footer';
 import ProductDetailModal from './components/ProductDetailModal';
 import ProductQuickView from './components/ProductQuickView';
+import ProductGrid from './components/ProductGrid';
 
 import { Product } from './types';
-import { STORE_INFO } from './data';
+import { STORE_INFO, PRODUCTS } from './data';
 import { useSound } from './hooks/useSound';
+import { useSanityProducts } from './hooks/useSanityProducts';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -36,6 +38,9 @@ export default function App() {
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const { playLuxuryChime } = useSound();
+  const { products: sanityProducts, isLoading: sanityLoading, error: sanityError } = useSanityProducts();
+
+  const products = sanityProducts.length > 0 ? sanityProducts : PRODUCTS;
 
   // Luxury loading shimmer overlay
   useEffect(() => {
@@ -155,6 +160,21 @@ export default function App() {
         {/* Section 1: Hero */}
         <Hero onExplore={handleNavigate} />
 
+        <section className="border-b border-stone-200 bg-white/70 px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.35em] text-amber-600">Sanity CMS</p>
+                <h2 className="font-serif text-2xl text-stone-900 sm:text-3xl">Simple product management for your shop</h2>
+              </div>
+              <p className="max-w-2xl text-sm text-stone-600">
+                The studio below is connected to the same product feed that powers the website. Update products in Sanity and the storefront refreshes automatically.
+              </p>
+            </div>
+            <ProductGrid products={products.slice(0, 6).map((product: Product) => ({ id: product.id, name: product.name, price: product.price, image: product.image, category: product.category }))} />
+          </div>
+        </section>
+
         {/* Section 2: Legacy / About */}
         <About />
 
@@ -162,10 +182,18 @@ export default function App() {
         <Founder />
 
         {/* Section 3: Collections (Filtering + Showcase Grid) */}
-        <Collections onQuickView={setQuickViewProduct} />
+        <Collections
+          products={products}
+          isLoading={sanityLoading}
+          error={sanityError}
+          onQuickView={setQuickViewProduct}
+        />
 
         {/* Section 4: Featured (Showcase details slider) */}
-        <Featured onSelectProduct={setSelectedProduct} />
+        <Featured
+          products={products}
+          onSelectProduct={setSelectedProduct}
+        />
 
         {/* Section 5: Certifications & Why Choose Us */}
         <WhyChooseUs />
