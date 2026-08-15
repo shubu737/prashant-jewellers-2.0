@@ -37,9 +37,14 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'Ring', value: 'ring' },
-          { title: 'Necklace', value: 'necklace' },
-          { title: 'Bracelet', value: 'bracelet' },
+          { title: 'All Jewelry', value: 'all-jewelry' },
+          { title: 'Kundan & Bridal', value: 'kundan-bridal' },
+          { title: 'Royal Gold', value: 'royal-gold' },
+          { title: 'Flawless Diamonds', value: 'flawless-diamonds' },
+          { title: 'Fine Silver', value: 'fine-silver' },
+          { title: 'Rings', value: 'rings' },
+          { title: 'Necklaces', value: 'necklaces' },
+          { title: 'Bracelets', value: 'bracelets' },
         ],
         layout: 'radio',
       },
