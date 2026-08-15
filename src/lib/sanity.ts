@@ -1,22 +1,27 @@
-import { createClient } from '@sanity/client';
-import imageUrlBuilder from '@sanity/image-url';
+import { createClient } from '@sanity/client'
+import imageUrlBuilder from '@sanity/image-url'
 
-const projectId = import.meta.env.VITE_SANITY_PROJECT_ID || '';
-const dataset = import.meta.env.VITE_SANITY_DATASET || 'production';
-const useCdn = true;
+const projectId =
+  import.meta.env.VITE_SANITY_PROJECT_ID || 'pjj05gg6'
 
-export const sanityClient = projectId
-  ? createClient({
-      projectId,
-      dataset,
-      apiVersion: '2024-01-01',
-      useCdn,
-      ignoreBrowserTokenWarning: true,
-    })
-  : null;
+const dataset =
+  import.meta.env.VITE_SANITY_DATASET || 'production'
 
-const builder = sanityClient ? imageUrlBuilder(sanityClient) : null;
+export const sanityClient = createClient({
+  projectId,
+  dataset,
+  apiVersion: '2024-01-01',
+  useCdn: true,
+})
+
+const builder = imageUrlBuilder(sanityClient)
 
 export function urlFor(source: any) {
-  return builder ? builder.image(source) : '';
+  if (!source) return null
+
+  try {
+    return builder.image(source)
+  } catch {
+    return null
+  }
 }
