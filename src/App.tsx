@@ -1,4 +1,3 @@
-:::writing{variant="document" id="58321" title="Updated App.tsx"}
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
