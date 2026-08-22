@@ -17,26 +17,25 @@ interface CollectionsProps {
   onQuickView: (product: Product) => void;
 }
 
-type TabType = 'all' | 'gold' | 'diamond' | 'bridal' | 'silver' | 'ring' | 'necklace' | 'bracelet';
+type TabType = 'gold' | 'diamond' | 'bridal' | 'silver' | 'ring' | 'necklace' | 'bracelet';
 
 export default function Collections({ products, isLoading, error, onQuickView }: CollectionsProps) {
-  const [activeTab, setActiveTab] = useState<TabType>('all');
+  const [activeTab, setActiveTab] = useState<TabType>('bridal');
   const { playGlowChime, playLuxuryChime } = useSound();
 
   const tabs: { label: string; value: TabType }[] = [
-    { label: 'All Jewelry', value: 'all' },
-    { label: 'Kundan & Bridal', value: 'bridal' },
-    { label: 'Royal Gold', value: 'gold' },
-    { label: 'Flawless Diamonds', value: 'diamond' },
-    { label: 'Fine Silver', value: 'silver' },
-    { label: 'Rings', value: 'ring' },
-    { label: 'Necklaces', value: 'necklace' },
-    { label: 'Bracelets', value: 'bracelet' }
-  ];
+  { label: 'Kundan & Bridal', value: 'bridal' },
+  { label: 'Royal Gold', value: 'gold' },
+  { label: 'Flawless Diamonds', value: 'diamond' },
+  { label: 'Fine Silver', value: 'silver' },
+  { label: 'Rings', value: 'ring' },
+  { label: 'Necklaces', value: 'necklace' },
+  { label: 'Bracelets', value: 'bracelet' }
+];
 
-  const filteredProducts = activeTab === 'all'
-    ? products
-    : products.filter(p => p.category === activeTab);
+  const filteredProducts = products.filter(
+  (p) => p.category === activeTab
+);
 
   const handleTabChange = (tab: TabType) => {
     setActiveTab(tab);
