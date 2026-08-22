@@ -23,66 +23,48 @@ interface SanityProductResponse {
   } | null;
 }
 
-/**
- * Converts Sanity category values into the exact values
- * expected by the frontend.
- *
- * Supports both the NEW values and OLD values already
- * stored in existing Sanity products.
- */
 function normalizeCategory(category?: string): ProductCategory {
   const value = category?.toLowerCase().trim();
 
   switch (value) {
-    // Kundan & Bridal
     case 'bridal':
     case 'kundan-bridal':
     case 'kundan & bridal':
     case 'kundan and bridal':
       return 'bridal';
 
-    // Royal Gold
     case 'gold':
     case 'royal-gold':
     case 'royal gold':
       return 'gold';
 
-    // Flawless Diamonds
     case 'diamond':
     case 'flawless-diamonds':
     case 'flawless diamonds':
       return 'diamond';
 
-    // Fine Silver
     case 'silver':
     case 'fine-silver':
     case 'fine silver':
       return 'silver';
 
-    // Rings
     case 'ring':
     case 'rings':
       return 'ring';
 
-    // Necklaces
     case 'necklace':
     case 'necklaces':
       return 'necklace';
 
-    // Bracelets
     case 'bracelet':
     case 'bracelets':
       return 'bracelet';
 
-    // "All Jewelry" should NOT be a product category.
-    // Use gold as a safe fallback for old/invalid products.
-    case 'all-jewelry':
-    case 'all jewelry':
-    case 'all':
     default:
       console.warn(
-        `Unknown Sanity category "${category}". Falling back to "gold".`
+        `Unknown Sanity category: "${category}"`
       );
+
       return 'gold';
   }
 }
@@ -95,7 +77,7 @@ export function useSanityProducts() {
   useEffect(() => {
     if (!sanityClient) {
       setError(
-        'Add your Sanity project ID and dataset in the environment variables to enable product syncing.'
+        'Add your Sanity project ID and dataset in the environment variables.'
       );
       setProducts(PRODUCTS);
       setIsLoading(false);
@@ -130,8 +112,8 @@ export function useSanityProducts() {
           'SANITY PRODUCTS:',
           data.map((item) => ({
             name: item.name,
-            categoryFromSanity: item.category,
-            categoryForWebsite: normalizeCategory(item.category),
+            sanityCategory: item.category,
+            websiteCategory: normalizeCategory(item.category),
           }))
         );
 
@@ -160,27 +142,23 @@ export function useSanityProducts() {
               'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=800';
           }
 
+          const category = normalizeCategory(item.category);
+
           return {
             id: item._id,
             name: item.name || 'Untitled Jewelry',
-
-            // IMPORTANT:
-            // Normalize Sanity category before the product
-            // reaches Collections.tsx.
-            category: normalizeCategory(item.category),
-
+            category,
             price: item.price || '₹0',
             originalPrice: item.originalPrice,
             description: item.description || '',
             purity: item.purity || '22K Hallmarked',
             weight: item.weight || 'N/A',
             isFeatured: !!item.isFeatured,
-            rating: item.rating ?? 5.0,
+            rating: item.rating ?? 5,
             image: imageUrl,
           };
         });
 
-        // Keep local catalog products as fallback/additional products.
         const mergedMap = new Map<string, Product>();
 
         mapped.forEach((product) => {
@@ -193,12 +171,27 @@ export function useSanityProducts() {
           }
         });
 
-        setProducts(Array.from(mergedMap.values()));
+        const finalProducts = Array.from(mergedMap.values());
+
+        console.log(
+          'FINAL PRODUCTS BY CATEGORY:',
+          {
+            bridal: finalProducts.filter(p => p.category === 'bridal'),
+            gold: finalProducts.filter(p => p.category === 'gold'),
+            diamond: finalProducts.filter(p => p.category === 'diamond'),
+            silver: finalProducts.filter(p => p.category === 'silver'),
+            ring: finalProducts.filter(p => p.category === 'ring'),
+            necklace: finalProducts.filter(p => p.category === 'necklace'),
+            bracelet: finalProducts.filter(p => p.category === 'bracelet'),
+          }
+        );
+
+        setProducts(finalProducts);
         setIsLoading(false);
       })
       .catch((err) => {
         console.warn(
-          'Sanity fetch notice (using local catalog fallback):',
+          'Sanity fetch notice:',
           err
         );
 
