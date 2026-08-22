@@ -71,19 +71,6 @@ export const PRODUCTS: Product[] = [
     purity: "22K Gold & Natural Polki",
     weight: "48.2g"
   },
-  {
-    id: "p-bridal-3",
-    name: "Royal Rajkumari Kundan Hathphool",
-    category: "bridal",
-    price: "₹2,65,000",
-    image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80",
-    rating: 5,
-    isFeatured: false,
-    description: "Elegant adjustable gold bracelet extending with masterfully crafted filigree chains to ring medallions, detailed in traditional Rajasthani Meenakari work.",
-    purity: "22K Yellow Gold",
-    weight: "35.8g"
-  },
-
   // Diamond Collection
   {
     id: "p-diamond-1",
@@ -187,18 +174,7 @@ export const PRODUCTS: Product[] = [
     purity: "92.5 Sterling Silver (Rhodium Plating)",
     weight: "22.6g"
   },
-  {
-    id: "p-silver-3",
-    name: "Arali Emerald Cascade Ring",
-    category: "silver",
-    price: "₹12,800",
-    image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=600&q=80",
-    rating: 4.6,
-    isFeatured: false,
-    description: "Fine luxury silver ring enclosing custom lab-grown royal emerald gemstones, displaying modern geometric edges.",
-    purity: "92.5 Sterling Silver",
-    weight: "6.8g"
-  }
+  
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
