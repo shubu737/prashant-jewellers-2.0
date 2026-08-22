@@ -50,14 +50,14 @@ export const PRODUCTS: Product[] = [
     id: "p-bridal-1",
     name: "Kundan Mahal Emperor Choker",
     category: "bridal",
-    price: "₹7,25,000",
-    originalPrice: "₹7,80,000",
-    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
+    price: "₹42,71,886",
+    originalPrice: "₹42,69,886",
+    image: '/images/KundanMahalEmperorChoker.jpg',
     rating: 5,
     isFeatured: true,
     description: "A breathtaking antique bridal collar crafted in 22 Karat certified yellow gold, featuring flawless uncut Kundan gemstones, imperial red spinels, and dangling natural Basra river pearls.",
     purity: "22K Yellow Gold (91.6% Purity)",
-    weight: "112.4g"
+    weight: "300.4g"
   },
   {
     id: "p-bridal-2",
