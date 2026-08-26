@@ -39,7 +39,10 @@ export default function App() {
 
   const { playLuxuryChime } = useSound();
 
-  // Fetch products from Sanity
+  // ============================================================
+  // SANITY PRODUCTS
+  // ============================================================
+
   const {
     products: sanityProducts,
     isLoading: sanityLoading,
@@ -48,9 +51,13 @@ export default function App() {
 
   // Use Sanity products when available.
   // Fall back to local products if Sanity has no products.
-  const products = sanityProducts.length > 0 ? sanityProducts : PRODUCTS;
+  const products =
+    sanityProducts.length > 0 ? sanityProducts : PRODUCTS;
 
-  // Luxury loading shimmer overlay
+  // ============================================================
+  // LUXURY LOADER
+  // ============================================================
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -59,7 +66,10 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Monitor scrolling to highlight navbar links and show Scroll To Top action
+  // ============================================================
+  // SCROLL / ACTIVE SECTION
+  // ============================================================
+
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
@@ -96,12 +106,21 @@ export default function App() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, {
+      passive: true,
+    });
+
+    // Run once on initial load
+    handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  // ============================================================
+  // NAVIGATION
+  // ============================================================
 
   const handleNavigate = (sectionId: string) => {
     const el = document.getElementById(sectionId);
@@ -109,11 +128,16 @@ export default function App() {
     if (el) {
       el.scrollIntoView({
         behavior: 'smooth',
+        block: 'start',
       });
 
       setActiveSection(sectionId);
     }
   };
+
+  // ============================================================
+  // WHATSAPP
+  // ============================================================
 
   const handleFloatingWhatsApp = () => {
     playLuxuryChime();
@@ -124,9 +148,14 @@ export default function App() {
 
     window.open(
       `https://wa.me/${STORE_INFO.whatsapp}?text=${text}`,
-      '_blank'
+      '_blank',
+      'noopener,noreferrer'
     );
   };
+
+  // ============================================================
+  // SCROLL TO TOP
+  // ============================================================
 
   const handleScrollToTop = () => {
     window.scrollTo({
@@ -134,13 +163,33 @@ export default function App() {
       behavior: 'smooth',
     });
 
+    setActiveSection('home');
     playLuxuryChime();
   };
 
   return (
-    <div className="offwhite-theme relative min-h-screen bg-[#F2F0EF] text-[#050505] font-sans antialiased overflow-x-hidden selection:bg-[#D4AF37]/30 selection:text-[#050505] border-4 md:border-8 border-[#D4AF37]/5">
+    <div
+      className="
+        offwhite-theme
+        relative
+        min-h-screen
+        bg-[#F2F0EF]
+        text-[#050505]
+        font-sans
+        antialiased
+        overflow-x-hidden
+        selection:bg-[#D4AF37]/30
+        selection:text-[#050505]
+        border-4
+        md:border-8
+        border-[#D4AF37]/5
+      "
+    >
 
-      {/* Luxury loading animation */}
+      {/* ========================================================
+          LUXURY LOADING OVERLAY
+      ========================================================= */}
+
       <AnimatePresence>
         {isLoading && (
           <motion.div
@@ -151,7 +200,16 @@ export default function App() {
               ease: 'easeInOut',
             }}
             id="luxury-loader"
-            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#211715]"
+            className="
+              fixed
+              inset-0
+              z-[200]
+              flex
+              flex-col
+              items-center
+              justify-center
+              bg-[#211715]
+            "
           >
             {/* Luxury background */}
             <div className="absolute inset-0 bg-[#211715]" />
@@ -201,7 +259,16 @@ export default function App() {
                     duration: 1.6,
                     ease: 'easeInOut',
                   }}
-                  className="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
+                  className="
+                    absolute
+                    top-0
+                    bottom-0
+                    w-1/2
+                    bg-gradient-to-r
+                    from-transparent
+                    via-[#D4AF37]
+                    to-transparent
+                  "
                 />
               </div>
 
@@ -213,16 +280,40 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Floating Gold Dust particle system */}
-      <Particles />
+      {/* ========================================================
+          BACKGROUND PARTICLES
+          IMPORTANT:
+          They cannot capture clicks.
+      ========================================================= */}
 
-      {/* Primary Header/Navbar */}
-      <Navbar
-        activeSection={activeSection}
-        onNavigate={handleNavigate}
-      />
+      <div
+        className="
+          pointer-events-none
+          fixed
+          inset-0
+          z-0
+        "
+      >
+        <Particles />
+      </div>
 
-      {/* Main Content */}
+      {/* ========================================================
+          PRIMARY NAVBAR
+          IMPORTANT:
+          Navbar stays above every page element.
+      ========================================================= */}
+
+      <div className="relative z-[100]">
+        <Navbar
+          activeSection={activeSection}
+          onNavigate={handleNavigate}
+        />
+      </div>
+
+      {/* ========================================================
+          MAIN CONTENT
+      ========================================================= */}
+
       <main className="relative z-20">
 
         {/* Section 1: Hero */}
@@ -251,45 +342,72 @@ export default function App() {
         {/* Section 5: Certifications & Why Choose Us */}
         <WhyChooseUs />
 
-        {/* Section 5.5: Gold & Precious Metals Interactive Estimation Desk */}
+        {/* Section 5.5: Gold & Precious Metals */}
         <GoldRateEstimator />
 
         {/* Section 6: Testimonials */}
         <Testimonials />
 
-        {/* Section 7: Craft & Showcase Gallery */}
+        {/* Section 7: Gallery */}
         <Gallery />
 
-        {/* Section 8: Brand Walkthrough Video & Showroom Tour */}
+        {/* Section 8: Showroom Tour */}
         <ShowroomTour />
 
-        {/* Section 9 & 10: Contact + Flagship Store Location */}
+        {/* Section 9 & 10: Contact + Location */}
         <VisitUs />
 
       </main>
 
-      {/* Footer */}
+      {/* ========================================================
+          FOOTER
+      ========================================================= */}
+
       <Footer onNavigate={handleNavigate} />
 
-      {/* Quick View Modal */}
+      {/* ========================================================
+          QUICK VIEW MODAL
+      ========================================================= */}
+
       <ProductQuickView
         product={quickViewProduct}
         onClose={() => setQuickViewProduct(null)}
       />
 
-      {/* Product Detail Modal */}
+      {/* ========================================================
+          PRODUCT DETAIL MODAL
+      ========================================================= */}
+
       <ProductDetailModal
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
       />
 
-      {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-center space-y-3.5">
+      {/* ========================================================
+          FLOATING ACTION BUTTONS
+      ========================================================= */}
 
-        {/* Scroll To Top */}
+      <div
+        className="
+          fixed
+          bottom-6
+          right-6
+          z-40
+          flex
+          flex-col
+          items-center
+          space-y-3.5
+        "
+      >
+
+        {/* ======================================================
+            SCROLL TO TOP
+        ====================================================== */}
+
         <AnimatePresence>
           {showScrollTop && (
             <motion.button
+              type="button"
               initial={{
                 scale: 0,
                 opacity: 0,
@@ -303,16 +421,49 @@ export default function App() {
                 opacity: 0,
               }}
               onClick={handleScrollToTop}
-              className="flex h-11 w-11 items-center justify-center border border-[#D4AF37]/35 bg-neutral-950/90 text-amber-400 hover:bg-[#D4AF37] hover:text-black hover:border-[#D4AF37] shadow-xl backdrop-blur-md cursor-pointer transition-all duration-300 rounded-none group"
+              className="
+                flex
+                h-11
+                w-11
+                items-center
+                justify-center
+                border
+                border-[#D4AF37]/35
+                bg-neutral-950/90
+                text-amber-400
+                hover:bg-[#D4AF37]
+                hover:text-black
+                hover:border-[#D4AF37]
+                shadow-xl
+                backdrop-blur-md
+                cursor-pointer
+                transition-all
+                duration-300
+                rounded-none
+                group
+              "
               title="Return to peak"
+              aria-label="Scroll to top"
             >
-              <ArrowUp className="h-4.5 w-4.5 transition-transform duration-300 group-hover:-translate-y-1" />
+              <ArrowUp
+                className="
+                  h-4.5
+                  w-4.5
+                  transition-transform
+                  duration-300
+                  group-hover:-translate-y-1
+                "
+              />
             </motion.button>
           )}
         </AnimatePresence>
 
-        {/* Floating WhatsApp Button */}
+        {/* ======================================================
+            FLOATING WHATSAPP BUTTON
+        ====================================================== */}
+
         <motion.button
+          type="button"
           onClick={handleFloatingWhatsApp}
           whileHover={{
             scale: 1.05,
@@ -320,18 +471,54 @@ export default function App() {
           whileTap={{
             scale: 0.95,
           }}
-          className="flex h-13 w-13 items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white shadow-2xl pulse rounded-full cursor-pointer transition-colors duration-300 border border-white/25 group relative"
+          className="
+            relative
+            flex
+            h-13
+            w-13
+            items-center
+            justify-center
+            bg-emerald-600
+            hover:bg-emerald-500
+            text-white
+            shadow-2xl
+            rounded-full
+            cursor-pointer
+            transition-colors
+            duration-300
+            border
+            border-white/25
+            group
+          "
           title="Connect with direct Rawatbhata Sales Representative"
+          aria-label="Contact Prashant Jewellers on WhatsApp"
         >
           {/* Pulsating ring */}
-          <div className="absolute inset-0 rounded-full border-2 border-emerald-500 animate-ping opacity-60 pointer-events-none group-hover:scale-110" />
+          <div
+            className="
+              absolute
+              inset-0
+              rounded-full
+              border-2
+              border-emerald-500
+              animate-ping
+              opacity-60
+              pointer-events-none
+              group-hover:scale-110
+            "
+          />
 
-          <MessageSquare className="h-6 w-6 relative z-10" />
+          <MessageSquare
+            className="
+              h-6
+              w-6
+              relative
+              z-10
+            "
+          />
         </motion.button>
 
       </div>
-
     </div>
   );
 }
-
